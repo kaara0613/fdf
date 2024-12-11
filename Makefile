@@ -6,7 +6,7 @@
 #    By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 15:46:31 by kaara             #+#    #+#              #
-#    Updated: 2024/12/11 16:32:38 by kaara            ###   ########.fr        #
+#    Updated: 2024/12/11 18:16:57 by kaara            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,20 +20,24 @@ OBJS = $(SRCS:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -I$(LIBFT_DIR) -I$(MINILIBX_DIR)
+MLXFLAGS = -lmlx -lXext -lX11
 
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 MINILIBX_DIR = ./minilibx-linux
-MINILIBX = $(MINILIBX_DIR)/minilibx.a
+MINILIBX = $(MINILIBX_DIR)/libmlx.a
 
 all: $(LIBFT) $(NAME)
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
+$(MINILIBX):
+	$(MAKE) -C $(MINILIBX_DIR)
+
 $(NAME): $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+	$(CC) $(CFLAGS) $(MLXFLAGS) $(OBJS) $(LIBFT) $(MINILIBX) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

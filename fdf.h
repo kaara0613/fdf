@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/11 16:37:12 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/11 19:10:20 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@
 
 # define BUFFER_SIZE 42
 # define ESC_KEY 53
+
+#include <X11/X.h>
+#include <X11/keysym.h>
+#include <stdio.h>
+#include "./minilibx-linux/mlx.h"
 
 typedef struct s_coordinate
 {
@@ -45,11 +50,12 @@ void	make_mlx_window(t_window_data *window_data);
 void	control_mlx_window(t_window_data *window_data);
 
 //minilibx_use_u.c
-void	key_hook(int keycode, void *param);
+int	key_hook(int keycode, void *param);
 
 //make _map.c
-int	**make_map(int fd, t_coordinate *max);
-void	render_map(void);
+// int	**make_map(int fd, t_coordinate *max);
+void	render_map(t_window_data	*window_data);
+
 
 
 #endif

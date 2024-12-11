@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+         #
+#    By: kaara <kaara@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 15:46:31 by kaara             #+#    #+#              #
-#    Updated: 2024/12/11 18:16:57 by kaara            ###   ########.fr        #
+#    Updated: 2024/12/11 19:14:38 by kaara            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJS = $(SRCS:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -I$(LIBFT_DIR) -I$(MINILIBX_DIR)
-MLXFLAGS = -lmlx -lXext -lX11
+MLXFLAGS = -Lminilibx-linux -lmlx -lXext -lX11
 
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
@@ -36,7 +36,7 @@ $(LIBFT):
 $(MINILIBX):
 	$(MAKE) -C $(MINILIBX_DIR)
 
-$(NAME): $(OBJS) $(LIBFT)
+$(NAME):  $(OBJS) $(LIBFT) $(MINILIBX)
 	$(CC) $(CFLAGS) $(MLXFLAGS) $(OBJS) $(LIBFT) $(MINILIBX) -o $(NAME)
 
 %.o: %.c

@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/11 19:10:20 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/11 19:46:39 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <math.h>
 
 # define BUFFER_SIZE 42
-# define ESC_KEY 53
+# define ESC_KEY 65307
 
 #include <X11/X.h>
 #include <X11/keysym.h>
@@ -46,7 +46,8 @@ typedef struct s_window_data
 }	t_window_data;
 
 //minilibx_use.c
-void	make_mlx_window(t_window_data *window_data);
+
+t_window_data	*make_mlx_window();
 void	control_mlx_window(t_window_data *window_data);
 
 //minilibx_use_u.c

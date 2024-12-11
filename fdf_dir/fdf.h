@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/11 14:02:05 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/11 16:37:12 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <math.h>
 
 # define BUFFER_SIZE 42
-#define ESC_KEY 53
+# define ESC_KEY 53
 
 typedef struct s_coordinate
 {
@@ -49,6 +49,7 @@ void	key_hook(int keycode, void *param);
 
 //make _map.c
 int	**make_map(int fd, t_coordinate *max);
+void	render_map(void);
 
 
 #endif

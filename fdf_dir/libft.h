@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:25:11 by kaara             #+#    #+#             */
-/*   Updated: 2024/06/26 17:19:56 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/11 10:54:10 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 
 # include <unistd.h>
+# include <limits.h>
+# include <stdbool.h>
 # include <stdlib.h>
 
 int		ft_tolower(int c);

@@ -3,18 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kaara <kaara@student.42.fr>                +#+  +:+       +#+         #
+#    By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 15:46:31 by kaara             #+#    #+#              #
-#    Updated: 2024/12/11 19:14:38 by kaara            ###   ########.fr        #
+#    Updated: 2024/12/12 23:14:10 by kaara            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fdf
 
-SRCS = main.c\
-		minilibx_use.c minilibx_use_u.c\
-		render_map.c\
+SRCS = testmain.c\
+		make_map.c make_map_u.c
+# minilibx_use.c minilibx_use_u.c\
+# render_map.c\
+		
 
 OBJS = $(SRCS:.c=.o)
 

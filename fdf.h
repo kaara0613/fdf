@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/12 13:28:49 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/12 23:32:50 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	control_mlx_window(t_window_data *window_data);
 int	key_hook(int keycode, void *param);
 
 //make _map.c
-// int	**make_map(int fd, t_coordinate *max);
+t_coordinate_data	**fdf_to_map(int fd);
 
 //make _map_u.c
 t_coordinate_data	**make_coordinate_data(char ***map_char);

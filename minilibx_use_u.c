@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   minilibx_use_u.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:47:25 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/11 19:44:55 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/12 13:21:46 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-#include <stdio.h>
 
 int	key_hook(int keycode, void *param)
 {

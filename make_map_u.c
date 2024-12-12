@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_map_u.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/11 21:13:05 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/12 13:29:31 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,35 +18,57 @@ void	reset_coordinate(t_coordinate *origin)
 	origin->y = 0;
 }
 
-void	make_map_char(int fd, char ***map_char)
+char	***make_map_char(int fd)
 {
-	t_coordinate	*make_max_index;
+	char			***map_char;
+	t_coordinate	*coordinate_index;
 
-	while (**map_char[make_max_index->y] != NULL)
+	reset_coordinate(coordinate_index);
+	while (1)
 	{
-		**map_char[make_max_index->y] = get_next_line(fd);
-		while (*map_char[make_max_index->y][make_max_index->x] != NULL)
-			*map_char[make_max_index->y][make_max_index->x++]
-				= ft_sprit(map_char[make_max_index->y], ' ');
-		make_max_index->y++;
+		*map_char[coordinate_index->y] = get_next_line(fd);
+		map_char[coordinate_index->y]
+			= ft_sprit(*map_char[coordinate_index->y], ' ');
+		if (*map_char[coordinate_index->y])
+			break ;
+		coordinate_index->y++;
 	}
+	return (map_char);
 }
 
 t_coordinate_data	**make_map(char ***map_char)
 {
-	t_coordinate_data **map;
-	t_coordinate	*make_max_index;
+	t_coordinate_data	**map;
+	t_coordinate		*coordinate_index;
 
-	reset_coordinate()
-
-
-	while (make_max_index->y <= max->y)
+	reset_coordinate(coordinate_index);
+	while (coordinate_index->y != NULL)
 	{
-		while (make_max_index->x <= max->x)
+		while (coordinate_index->x != NULL)
 		{
-			make_max_index->y++;
+			map[coordinate_index->y][coordinate_index->x]
+				= make_coordinate_data(map_char, coordinate_index);
+			coordinate_index->y++;
 		}
-		make_max_index->y++;
+		coordinate_index->y++;
 	}
-	return (map)
+	return (map);
+}
+
+t_coordinate_data	make_coordinate_data(char	***map_char,
+	t_coordinate	*coordinate_index)
+{
+	char				**temp;
+	t_coordinate_data	map;
+
+	if (strchar(map_char[coordinate_index->x]
+			[coordinate_index->y], ','))
+	{
+		temp = split(map_char[coordinate_index->x]
+			[coordinate_index->y], ',');
+		map.z = atoi(temp[0]);
+		map.colar = atoi(temp[1]);
+	}
+	else
+		map.z = atoi(map_char[coordinate_index->x][coordinate_index->y]);
 }

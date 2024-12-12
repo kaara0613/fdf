@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/11 20:40:37 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/12 13:28:49 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@
 # include <stdbool.h>
 # include <stdlib.h>
 # include <math.h>
-# include <X11/X.h>
-# include <X11/keysym.h>
+// # include <X11/X.h>
+// # include <X11/keysym.h>
 # include <stdio.h>
+# include <fcntl.h>
 # include "./minilibx-linux/mlx.h"
 # include "./libft/libft.h"
 
@@ -57,6 +58,9 @@ int	key_hook(int keycode, void *param);
 
 //make _map.c
 // int	**make_map(int fd, t_coordinate *max);
+
+//make _map_u.c
+t_coordinate_data	**make_coordinate_data(char ***map_char);
 
 //render_map.c
 void	render_map(t_window_data	*window_data);

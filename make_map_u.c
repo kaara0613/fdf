@@ -6,17 +6,15 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/12 13:29:31 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/12 18:20:09 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	reset_coordinate(t_coordinate *origin)
-{
-	origin->x = 0;
-	origin->y = 0;
-}
+static t_coordinate_data	make_coordinate_data(char	***map_char, \
+	t_coordinate	*coordinate_index);
+static void	reset_coordinate(t_coordinate *origin);
 
 char	***make_map_char(int fd)
 {
@@ -36,11 +34,13 @@ char	***make_map_char(int fd)
 	return (map_char);
 }
 
-t_coordinate_data	**make_map(char ***map_char)
+t_coordinate_data	**make_map(char ***map_char, t_coordinate_data	**map)
 {
-	t_coordinate_data	**map;
 	t_coordinate		*coordinate_index;
 
+	map = (t_coordinate_data **)malloc(sizeof(t_coordinate_data));
+	if (map == NULL)
+		return (NULL);
 	reset_coordinate(coordinate_index);
 	while (coordinate_index->y != NULL)
 	{
@@ -55,7 +55,13 @@ t_coordinate_data	**make_map(char ***map_char)
 	return (map);
 }
 
-t_coordinate_data	make_coordinate_data(char	***map_char,
+static void	reset_coordinate(t_coordinate *origin)
+{
+	origin->x = 0;
+	origin->y = 0;
+}
+
+static t_coordinate_data	make_coordinate_data(char	***map_char,
 	t_coordinate	*coordinate_index)
 {
 	char				**temp;
@@ -71,4 +77,5 @@ t_coordinate_data	make_coordinate_data(char	***map_char,
 	}
 	else
 		map.z = atoi(map_char[coordinate_index->x][coordinate_index->y]);
+	return (map);
 }

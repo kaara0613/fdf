@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   testmain.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 15:45:39 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/13 15:59:43 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/13 18:11:16 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(int argc, char **argv)
 {
-	t_coordinate_data    **map;
+	t_coordinate_data    ***map;
 
 	if (argc <= 1)
 		return (0);
@@ -25,9 +25,9 @@ int main(int argc, char **argv)
 	{
 		for (int x = 0; &map[y][x] != NULL; x++)
 		{
-			printf("%d", map[y][x].z);
-			if (map[y][x].colar)
-				printf("%d", map[y][x].colar);
+			printf("%d", map[y][x]->z);
+			if (map[y][x]->colar)
+				printf("%d", map[y][x]->colar);
 		}
 	}
 	return (0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_map_u.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/13 15:07:29 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/13 16:12:48 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	***make_map_char(int fd)
 		return (NULL);
 	while (1)
 	{
-		*map_char[coordinate_index->y] = get_next_line(fd);
+		*(map_char[coordinate_index->y]) = get_next_line(fd);
 		map_char[coordinate_index->y]
 			= ft_split(*map_char[coordinate_index->y], ' ');
 		if (*map_char[coordinate_index->y])
@@ -42,7 +42,7 @@ t_coordinate_data	**make_map(char ***map_char)
 	t_coordinate_data	**map;
 	t_coordinate		*coordinate_index;
 
-	map = (t_coordinate_data **)malloc(sizeof(t_coordinate_data));
+	map = (t_coordinate_data ***)malloc(sizeof(t_coordinate_data));
 	if (map == NULL)
 		return (NULL);
 	reset_coordinate(coordinate_index);
@@ -71,6 +71,9 @@ static t_coordinate_data	make_coordinate_data(char	***map_char,
 	char				**temp;
 	t_coordinate_data	map;
 
+	temp = (char **)malloc(sizeof(char));
+	if (temp == NULL)
+		return ;
 	if (ft_strchr(map_char[coordinate_index->x]
 			[coordinate_index->y], ','))
 	{
@@ -81,5 +84,6 @@ static t_coordinate_data	make_coordinate_data(char	***map_char,
 	}
 	else
 		map.z = ft_atoi(map_char[coordinate_index->x][coordinate_index->y]);
+	free(temp);
 	return (map);
 }

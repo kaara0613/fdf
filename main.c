@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:31 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/11 20:30:05 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/13 13:21:44 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int fd)
 	t_coordinate		*max;
 	t_coordinate_data	**map;
 
-	map = make_map(fd, max);
+	map = make_map(fd);
 	window_data = make_mlx_window();
 	render_map(window_data);
 	control_mlx_window(window_data);

@@ -14,7 +14,7 @@
 
 int main(int argc, char **argv)
 {
-	t_coordinate_data    ***map;
+	t_coordinate_data	***map;
 
 	if (argc <= 1)
 		return (0);
@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 		return (0);
 	for (int y = 0; map[y] != NULL; y++)
 	{
-		for (int x = 0; &map[y][x] != NULL; x++)
+		for (int x = 0; map[y][x] != NULL; x++)
 		{
 			printf("%d", map[y][x]->z);
 			if (map[y][x]->colar)

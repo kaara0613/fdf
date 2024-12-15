@@ -18,8 +18,8 @@
 # include <stdbool.h>
 # include <stdlib.h>
 # include <math.h>
-// # include <X11/X.h>
-// # include <X11/keysym.h>
+# include <X11/X.h>
+# include <X11/keysym.h>
 # include <stdio.h>
 # include <fcntl.h>
 # include "./minilibx-linux/mlx.h"
@@ -55,11 +55,11 @@ void	control_mlx_window(t_window_data *window_data);
 int	key_hook(int keycode, void *param);
 
 //make _map.c
-t_coordinate_data	***fdf_to_map(char **argv);
+t_coordinate_data	**fdf_to_map(char **argv);
 
 //make _map_u.c
-char	***make_map_char(int fd);
-t_coordinate_data	***make_map(char ***map_char);
+t_coordinate_data	*make_char_map(int fd);
+t_coordinate_data	**make_map(t_coordinate_data **map);
 
 //render_map.c
 void	render_map(t_window_data	*window_data);

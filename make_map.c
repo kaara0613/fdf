@@ -12,16 +12,15 @@
 
 #include "fdf.h"
 
-t_coordinate_data	***fdf_to_map(char **argv)
+t_coordinate_data	**fdf_to_map(char **argv)
 {
 	int					fd;
-	char				***map_char;
-	t_coordinate_data	***map;
+	t_coordinate_data	**map;
 
 	fd = open(argv[1], O_RDONLY);
-	map_char = make_map_char(fd);
+	map = make_map_char(fd);
 	close(fd);
-	map = make_map(map_char);
+	map = make_map(map);
 	if (map == NULL)
 		return (NULL);
 	return (map);

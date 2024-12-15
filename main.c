@@ -16,7 +16,7 @@ int	main(int fd)
 {
 	t_window_data		*window_data;
 	t_coordinate		*max;
-	t_coordinate_data	**map;
+	t_coordinate_data	***map;
 
 	map = make_map(fd);
 	window_data = make_mlx_window();

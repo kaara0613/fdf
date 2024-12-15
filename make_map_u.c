@@ -12,10 +12,10 @@
 
 #include "fdf.h"
 
-static t_coordinate_data	make_coordinate_data(char	*map_char);
-static t_coordinate	*reset_coordinate(void);
+static t_coordinate_data	make_coordinate_data(char	*char_map);
+static t_coordinate			*reset_coordinate(void);
 
-t_coordinate_data	*make_map_char(int fd)
+t_coordinate_data	*make_char_map(int fd)
 {
 	t_coordinate_data	**map;
 	t_coordinate		*coordinate_index;
@@ -41,9 +41,6 @@ t_coordinate_data	**make_map(t_coordinate_data **map)
 	t_coordinate_data	**map;
 	t_coordinate		*coordinate_index;
 
-	map = (t_coordinate_data **)malloc(sizeof(t_coordinate_data));
-	if (map == NULL)
-		return (NULL);
 	coordinate_index = reset_coordinate();
 	while (map[coordinate_index->y] != NULL)
 	{
@@ -70,7 +67,7 @@ static t_coordinate	*reset_coordinate(void)
 	return (index);
 }
 
-static t_coordinate_data	make_coordinate_data(char	*map_char)
+static t_coordinate_data	make_coordinate_data(char	*char_map)
 {
 	char				**temp;
 	t_coordinate_data	map;
@@ -78,14 +75,14 @@ static t_coordinate_data	make_coordinate_data(char	*map_char)
 	temp = (char **)malloc(sizeof(char));
 	if (temp == NULL)
 		return ;
-	if (ft_strchr(map_char, ','))
+	if (ft_strchr(char_map, ','))
 	{
-		temp = ft_split(map_char, ',');
+		temp = ft_split(char_map, ',');
 		map.z = ft_atoi(temp[0]);
 		map.colar = ft_atoi(temp[1]);
 	}
 	else
-		map.z = ft_atoi(map_char);
+		map.z = ft_atoi(char_map);
 	free(temp);
 	return (map);
 }

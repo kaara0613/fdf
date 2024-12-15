@@ -28,8 +28,6 @@
 # define BUFFER_SIZE 42
 # define ESC_KEY 65307
 
-
-
 typedef struct s_coordinate
 {
 	int	x;
@@ -38,6 +36,7 @@ typedef struct s_coordinate
 
 typedef struct s_coordinate_data
 {
+	char *char_map;
 	int	z;
 	int	colar;
 }	t_coordinate_data;

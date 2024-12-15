@@ -16,7 +16,6 @@ SRCS = testmain.c\
 		make_map.c make_map_u.c
 # minilibx_use.c minilibx_use_u.c\
 # render_map.c\
-		
 
 OBJS = $(SRCS:.c=.o)
 

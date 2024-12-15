@@ -12,46 +12,45 @@
 
 #include "fdf.h"
 
-static t_coordinate_data	*make_coordinate_data(char	***map_char, \
-	t_coordinate	*coordinate_index);
+static t_coordinate_data	make_coordinate_data(char	*map_char);
 static t_coordinate	*reset_coordinate(void);
 
-char	***make_map_char(int fd)
+t_coordinate_data	*make_map_char(int fd)
 {
-	char			***map_char;
-	t_coordinate	*coordinate_index;
+	t_coordinate_data	**map;
+	t_coordinate		*coordinate_index;
 
 	coordinate_index = reset_coordinate();
-	map_char = (char ***)malloc(sizeof(char));
-	if (map_char == NULL)
-		return (NULL);
+	map = (t_coordinate_data **)malloc(sizeof(t_coordinate_data));
+	if (map == NULL)
+		exit (EXIT_FAILURE);
 	while (1)
 	{
-		*(map_char[coordinate_index->y]) = get_next_line(fd);
-		map_char[coordinate_index->y]
-			= ft_split(*map_char[coordinate_index->y], ' ');
-		if (*map_char[coordinate_index->y])
+		map[coordinate_index->y]->char_map = get_next_line(fd);
+		map[coordinate_index->y]
+			= ft_split(map[coordinate_index->y], ' ');
+		if (map[coordinate_index->y] == NULL)
 			break ;
 		coordinate_index->y++;
 	}
-	return (map_char);
+	return (map);
 }
 
-t_coordinate_data	***make_map(char ***map_char)
+t_coordinate_data	**make_map(t_coordinate_data **map)
 {
-	t_coordinate_data	***map;
+	t_coordinate_data	**map;
 	t_coordinate		*coordinate_index;
 
-	map = (t_coordinate_data ***)malloc(sizeof(t_coordinate_data));
+	map = (t_coordinate_data **)malloc(sizeof(t_coordinate_data));
 	if (map == NULL)
 		return (NULL);
 	coordinate_index = reset_coordinate();
-	while (map_char[coordinate_index->y] != NULL)
+	while (map[coordinate_index->y] != NULL)
 	{
-		while (map_char[coordinate_index->y][coordinate_index->x] != NULL)
+		while (map[coordinate_index->y][coordinate_index->x].char_map != NULL)
 		{
 			map[coordinate_index->y][coordinate_index->x]
-				= make_coordinate_data(map_char, coordinate_index);
+				= make_coordinate_data(map[coordinate_index->y][coordinate_index->x].char_map);
 			coordinate_index->y++;
 		}
 		coordinate_index->y++;
@@ -71,28 +70,22 @@ static t_coordinate	*reset_coordinate(void)
 	return (index);
 }
 
-static t_coordinate_data	*make_coordinate_data(char	***map_char,
-	t_coordinate	*coordinate_index)
+static t_coordinate_data	make_coordinate_data(char	*map_char)
 {
 	char				**temp;
-	t_coordinate_data	*map;
+	t_coordinate_data	map;
 
-	map = (t_coordinate_data *)malloc(sizeof(t_coordinate_data));
-	if (map == NULL)
-		return (NULL);
 	temp = (char **)malloc(sizeof(char));
 	if (temp == NULL)
-		return (NULL);
-	if (ft_strchr(map_char[coordinate_index->y]
-			[coordinate_index->x], ','))
+		return ;
+	if (ft_strchr(map_char, ','))
 	{
-		temp = ft_split(map_char[coordinate_index->y]
-			[coordinate_index->x], ',');
-		map->z = ft_atoi(temp[0]);
-		map->colar = ft_atoi(temp[1]);
+		temp = ft_split(map_char, ',');
+		map.z = ft_atoi(temp[0]);
+		map.colar = ft_atoi(temp[1]);
 	}
 	else
-		map->z = ft_atoi(map_char[coordinate_index->y][coordinate_index->x]);
+		map.z = ft_atoi(map_char);
 	free(temp);
 	return (map);
 }

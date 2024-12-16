@@ -6,18 +6,18 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:19 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/15 14:15:51 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/16 08:43:55 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-t_coordinate_data	**fdf_to_map(char **argv)
+t_coordinate_data	**fdf_to_map(char *filename)
 {
 	int					fd;
 	t_coordinate_data	**map;
 
-	fd = open(argv[1], O_RDONLY);
+	fd = open(filename, O_RDONLY);
 	map = make_map_char(fd);
 	close(fd);
 	map = make_map(map);

@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 03:59:51 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/16 08:31:45 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/16 15:19:28 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,18 @@ t_coordinate	*get_map_size(int fd, t_coordinate *map_size)
 	char	*read_buffer;
 
 	read_buffer = get_next_line(fd);
-	if (!read_buffer)
+	if (read_buffer == NULL)
 		return (map_size);
-	while (read_buffer++ != '\0')
+	while (*read_buffer++ != '\0')
 	{
-		if (read_buffer == ' ')
+		if (*read_buffer == ' ')
 			map_size->x++;
 	}
 	map_size->y++;
 	map_size->x = 0;
+	free(read_buffer);
 	get_map_size(fd, map_size);
+	return (map_size);
 }
 
 // t_coordinate	*get_map_size(int fd, t_coordinate *map_size)

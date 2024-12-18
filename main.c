@@ -6,21 +6,25 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:31 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/13 13:21:44 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/18 01:42:19 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	main(int fd)
+int	main(int argc, char **argv)
 {
-	t_window_data		*window_data;
-	t_coordinate		*max;
-	t_coordinate_data	***map;
+	// t_window_data		*window_data;
+	t_coordinate		map_size;
+	t_coordinate_data	**map;
 
-	map = make_map(fd);
-	window_data = make_mlx_window();
-	render_map(window_data);
-	control_mlx_window(window_data);
+	if (argc <= 1)
+		return (0);
+	map_size = map_check(argv[1]);
+	map = fdf_to_map(map_size, argv[1]);
+	free_map(map_size, map);
+	// window_data = make_mlx_window();
+	// render_map(window_data);
+	// control_mlx_window(window_data);
 	return (0);
 }

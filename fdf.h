@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/16 15:11:47 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/18 01:55:40 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ typedef struct s_coordinate
 
 typedef struct s_coordinate_data
 {
-	char *char_map;
 	int	z;
 	int	colar;
 }	t_coordinate_data;
@@ -48,18 +47,19 @@ typedef struct s_window_data
 }	t_window_data;
 
 //make _map.c
-t_coordinate_data	**fdf_to_map(char **argv);
+t_coordinate_data	**fdf_to_map(t_coordinate map_size, char *filename);
+void				free_map(t_coordinate	map_size, t_coordinate_data **map);
 
 //make _map_u.c
-t_coordinate_data	*make_char_map(int fd);
-t_coordinate_data	**make_map(t_coordinate_data **map);
-t_coordinate		*reset_coordinate(void);
+char				***make_char_map(t_coordinate	map_size, int fd);
+t_coordinate_data	**make_map(char ***char_map, t_coordinate	map_size);
+t_coordinate		reset_coordinate(t_coordinate	map_size);
 
 //map_check.c
-t_coordinate		*map_check(char *filename);
+t_coordinate		map_check(char *filename);
 
 //map_check_u.c
-t_coordinate		*get_map_size(int fd, t_coordinate *map_size);
+t_coordinate		get_map_size(int fd, t_coordinate map_size);
 
 //minilibx_use.c
 t_window_data		make_mlx_window(void);

@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 15:45:39 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/16 15:03:28 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/18 01:39:27 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@
 
 int main(int argc, char **argv)
 {
-	t_coordinate *map_size;
+	t_coordinate map_size;
 
 	if (argc <= 1)
 		return (0);
 	map_size = map_check(argv[1]);
-	printf("x = %d\ny = %d", map_size->x, map_size->y);
+	printf("x = %d\ny = %d", map_size.x, map_size.y);
 	return (0);
 }

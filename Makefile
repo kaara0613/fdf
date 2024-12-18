@@ -6,16 +6,16 @@
 #    By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 15:46:31 by kaara             #+#    #+#              #
-#    Updated: 2024/12/16 15:21:20 by kaara            ###   ########.fr        #
+#    Updated: 2024/12/18 01:36:14 by kaara            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fdf
 
-SRCS = testmain.c\
+SRCS = main.c\
 		map_check.c map_check_u.c \
-		make_map_u.c \
-# minilibx_use.c minilibx_use_u.c\
+		make_map.c make_map_u.c \
+#		 minilibx_use.c minilibx_use_u.c\
 # render_map.c\
 
 OBJS = $(SRCS:.c=.o)
@@ -30,7 +30,7 @@ LIBFT = $(LIBFT_DIR)/libft.a
 MINILIBX_DIR = ./minilibx-linux
 MINILIBX = $(MINILIBX_DIR)/libmlx.a
 
-all: $(LIBFT) $(NAME)
+all: $(LIBFT) $(MINILIBX) $(NAME)
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)

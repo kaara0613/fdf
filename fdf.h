@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/18 08:21:31 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/18 08:44:12 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ typedef struct s_window_data
 }	t_window_data;
 
 //make _map.c
-t_coordinate_data	**fdf_to_map(t_coordinate map_size, char *filename);
-void				free_map(t_coordinate	map_size, t_coordinate_data **map);
+t_coordinate_data	***fdf_to_map(t_coordinate map_size, char *filename);
+void				free_map(t_coordinate	map_size, t_coordinate_data ***map);
 
 //make _map_u.c
 char				***make_char_map(t_coordinate	map_size, int fd);

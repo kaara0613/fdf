@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/18 08:25:49 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/18 11:23:34 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,16 @@ t_coordinate_data	***make_map(char ***char_map, t_coordinate	map_size)
 
 	coordinate_index = reset_coordinate(coordinate_index);
 	map = (t_coordinate_data ***)malloc
-		(sizeof(t_coordinate_data **) * (map_size.y + 1));
+		(sizeof(t_coordinate_data **) * (map_size.y));
 	if (map == NULL)
 		exit (EXIT_FAILURE);
 	while (coordinate_index.y < map_size.y)
 	{
 		map[coordinate_index.y] = (t_coordinate_data **)malloc
-			(sizeof(t_coordinate_data *) * (map_size.x + 1));
+			(sizeof(t_coordinate_data *) * (map_size.x));
 		if (map[coordinate_index.y] == NULL)
 			exit (EXIT_FAILURE);
-		while (coordinate_index.x < map_size.x + 1)
+		while (coordinate_index.x < map_size.x)
 		{
 			map[coordinate_index.y][coordinate_index.x]
 				= make_coordinate_data
@@ -59,6 +59,7 @@ t_coordinate_data	***make_map(char ***char_map, t_coordinate	map_size)
 			coordinate_index.x++;
 		}
 		coordinate_index.y++;
+		coordinate_index.x = 0;
 	}
 	return (map);
 }
@@ -94,13 +95,14 @@ static t_coordinate_data	*make_coordinate_data(char	*char_map)
 	{
 		temp = ft_split(char_map, ',');
 		map->z = ft_atoi(temp[0]);
-		free(temp[0]);
 		map->colar = ft_atoi(temp[1]);
+		free(temp[0]);
 		free(temp[1]);
 		free(temp);
 	}
 	else
 		map->z = ft_atoi(char_map);
+	printf("%d\n",map->z);
 	return (map);
 }
 
@@ -118,6 +120,7 @@ void	free_char_map(t_coordinate map_size, char ***char_map)
 		}
 		free(char_map[coordinate_index.y]);
 		coordinate_index.y++;
+		coordinate_index.x = 0;
 	}
 	free(char_map);
 }

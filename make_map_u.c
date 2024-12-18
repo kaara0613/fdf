@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/18 01:54:45 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/18 03:22:45 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,21 @@ static void					free_char_map(t_coordinate map_size,
 
 char	***make_char_map(t_coordinate	map_size, int fd)
 {
+	char				*temp;
 	char				***char_map;
 	t_coordinate		coordinate_index;
 
 	coordinate_index = reset_coordinate(coordinate_index);
-	char_map = (char ***)malloc(sizeof(char *) * map_size.y);
+	char_map = (char ***)malloc(sizeof(char **) * (map_size.y + 1));
 	if (char_map == NULL)
 		exit(EXIT_FAILURE);
-	while (coordinate_index.y <= map_size.y)
+	while (coordinate_index.y < map_size.y)
 	{
-		*char_map[coordinate_index.y] = get_next_line(fd);
-		char_map[coordinate_index.y]
-			= ft_split(*char_map[coordinate_index.y], ' ');
+		temp = get_next_line(fd);
+		char_map[coordinate_index.y] = ft_split(temp, ' ');
 		coordinate_index.y++;
+		free(temp);
+		temp = NULL;
 	}
 	return (char_map);
 }
@@ -73,13 +75,22 @@ t_coordinate	reset_coordinate(t_coordinate	coordinate_index)
 
 static t_coordinate_data	make_coordinate_data(char	*char_map)
 {
+	int					i;
+	bool				flag;
 	char				**temp;
 	t_coordinate_data	map;
 
-	// temp = (char **)malloc(sizeof(char *) * 2);
-	// if (temp == NULL)
-	// 	exit(EXIT_EXIT_FAILURE);
-	if (ft_strchr(char_map, ','))
+	temp = (char **)malloc(sizeof(char *) * 3);
+	if (temp == NULL)
+		exit(EXIT_FAILURE);
+	i = 0;
+	flag = false;
+	while (char_map[i++])
+	{
+		if (char_map[i++] == ',')
+			flag = true;
+	}
+	if (flag)
 	{
 		temp = ft_split(char_map, ',');
 		map.z = ft_atoi(temp[0]);

@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:19 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/18 01:46:25 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/18 02:50:56 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_coordinate_data	**fdf_to_map(t_coordinate map_size, char *filename)
 	fd = open(filename, O_RDONLY);
 	char_map = make_char_map(map_size, fd);
 	close(fd);
-	map = make_map(char_map);
+	map = make_map(char_map, map_size);
 	if (map == NULL)
 		return (NULL);
 	return (map);

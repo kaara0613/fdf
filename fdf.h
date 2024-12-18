@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/18 06:58:07 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/18 08:21:31 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void				free_map(t_coordinate	map_size, t_coordinate_data **map);
 
 //make _map_u.c
 char				***make_char_map(t_coordinate	map_size, int fd);
-t_coordinate_data	**make_map(char ***char_map, t_coordinate	map_size);
+t_coordinate_data	***make_map(char ***char_map, t_coordinate	map_size);
 t_coordinate		reset_coordinate(t_coordinate	map_size);
 void	free_char_map(t_coordinate map_size, char ***char_map);
 

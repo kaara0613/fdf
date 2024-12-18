@@ -6,13 +6,13 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/18 07:27:00 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/18 08:25:49 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-static t_coordinate_data	make_coordinate_data(char	*char_map);
+static t_coordinate_data	*make_coordinate_data(char	*char_map);
 
 char	***make_char_map(t_coordinate	map_size, int fd)
 {
@@ -35,20 +35,20 @@ char	***make_char_map(t_coordinate	map_size, int fd)
 	return (char_map);
 }
 
-t_coordinate_data	**make_map(char ***char_map, t_coordinate	map_size)
+t_coordinate_data	***make_map(char ***char_map, t_coordinate	map_size)
 {
 	t_coordinate_data	***map;
 	t_coordinate		coordinate_index;
 
 	coordinate_index = reset_coordinate(coordinate_index);
-	map = (t_coordinate_data **)malloc
-		(sizeof(t_coordinate_data *) * (map_size.y + 1));
+	map = (t_coordinate_data ***)malloc
+		(sizeof(t_coordinate_data **) * (map_size.y + 1));
 	if (map == NULL)
 		exit (EXIT_FAILURE);
 	while (coordinate_index.y < map_size.y)
 	{
-		map[coordinate_index.y] = (t_coordinate_data *)malloc
-			(sizeof(t_coordinate_data) * (map_size.x + 1));
+		map[coordinate_index.y] = (t_coordinate_data **)malloc
+			(sizeof(t_coordinate_data *) * (map_size.x + 1));
 		if (map[coordinate_index.y] == NULL)
 			exit (EXIT_FAILURE);
 		while (coordinate_index.x < map_size.x + 1)
@@ -79,6 +79,9 @@ static t_coordinate_data	*make_coordinate_data(char	*char_map)
 
 	if (char_map == NULL)
 		return (NULL);
+	map = (t_coordinate_data *)malloc(sizeof(t_coordinate_data));
+	if (map == NULL)
+		exit (EXIT_FAILURE);
 	i = 0;
 	flag = false;
 	while (char_map[i] != '\0')

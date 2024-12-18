@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:31 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/18 07:16:35 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/18 08:10:11 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
 {
 	// t_window_data		*window_data;
 	t_coordinate		map_size;
-	t_coordinate_data	***map;
+	t_coordinate_data	**map;
 
 	if (argc <= 1)
 		return (0);

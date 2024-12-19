@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/19 05:12:54 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/19 05:47:15 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ t_coordinate_data	***make_render_map(t_coordinate	map_size,
 						t_coordinate_data ***map);
 
 //render_map_u.c
-t_coordinate_data	*make_render_coordinate(t_coordinate	map_index,
+t_coordinate_data	*make_render_coordinate(t_coordinate	coordinate_index,
 										t_coordinate_data	*map);
 // void				render_map(t_window_data	*window_data);
 

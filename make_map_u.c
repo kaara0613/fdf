@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/19 05:10:25 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/19 06:45:09 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,10 @@ static t_coordinate_data	*make_coordinate_data(char	*char_map)
 		free(temp);
 	}
 	else
+	{
 		map->z = ft_atoi(char_map);
+		map->colar = 255;
+	}
 	return (map);
 }
 

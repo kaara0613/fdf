@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_map_u.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/19 06:45:09 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/19 18:48:26 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	***make_char_map(t_coordinate	map_size, int fd)
 	char				***char_map;
 	t_coordinate		coordinate_index;
 
-	coordinate_index = reset_coordinate(coordinate_index);
+	coordinate_index.x = 0;
+	coordinate_index.y = 0;
 	char_map = (char ***)malloc(sizeof(char **) * (map_size.y + 1));
 	if (char_map == NULL)
 		exit(EXIT_FAILURE);
@@ -40,7 +41,8 @@ t_coordinate_data	***make_map(t_coordinate	map_size, char ***char_map)
 	t_coordinate_data	***map;
 	t_coordinate		coordinate_index;
 
-	coordinate_index = reset_coordinate(coordinate_index);
+	coordinate_index.x = 0;
+	coordinate_index.y = 0;
 	map = (t_coordinate_data ***)malloc
 		(sizeof(t_coordinate_data **) * (map_size.y));
 	if (map == NULL)
@@ -103,7 +105,7 @@ static t_coordinate_data	*make_coordinate_data(char	*char_map)
 	else
 	{
 		map->z = ft_atoi(char_map);
-		map->colar = 255;
+		map->colar = 0xFFFFFFFF;
 	}
 	return (map);
 }
@@ -112,7 +114,8 @@ void	free_char_map(t_coordinate map_size, char ***char_map)
 {
 	t_coordinate	coordinate_index;
 
-	coordinate_index = reset_coordinate(coordinate_index);
+	coordinate_index.x = 0;
+	coordinate_index.y = 0;
 	while (coordinate_index.y < map_size.y)
 	{
 		while (coordinate_index.x < map_size.x)

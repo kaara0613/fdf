@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:19 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/19 05:48:54 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/19 18:40:26 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ void	free_map(t_coordinate	map_size, t_coordinate_data ***map)
 {
 	t_coordinate	coordinate_index;
 
-	coordinate_index = reset_coordinate(coordinate_index);
+	coordinate_index.x = 0;
+	coordinate_index.y = 0;
+
 	while (coordinate_index.y < map_size.y)
 	{
 		while (coordinate_index.x < map_size.x)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:50:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/19 07:06:01 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/19 18:41:04 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void	render_map(t_coordinate map_size,
 {
 	t_coordinate	coordinate_index;
 
-	coordinate_index = reset_coordinate(coordinate_index);
+	coordinate_index.x = 0;
+	coordinate_index.y = 0;
 	while (coordinate_index.y < map_size.y)
 	{
 		while (coordinate_index.x < map_size.x)
@@ -38,7 +39,8 @@ t_coordinate_data	***make_render_map(t_coordinate	map_size,
 {
 	t_coordinate	coordinate_index;
 
-	coordinate_index = reset_coordinate(coordinate_index);
+	coordinate_index.x = 0;
+	coordinate_index.y = 0;
 	while (coordinate_index.y < map_size.y)
 	{
 		while (coordinate_index.x < map_size.x)

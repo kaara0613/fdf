@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/19 06:49:46 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/19 07:04:24 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ t_coordinate		map_check(char *filename);
 t_coordinate		get_map_size(int fd, t_coordinate map_size);
 
 //minilibx_use.c
-t_window_data		make_mlx_window(void);
+t_window_data		*make_mlx_window(void);
 void				control_mlx_window(t_window_data *window_data);
 
 //minilibx_use_u.c

@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:50:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/19 06:41:53 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/19 07:06:01 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	render_map(t_coordinate map_size,
 	{
 		while (coordinate_index.x < map_size.x)
 		{
-			mlx_pixel_put(window_data.mlx_ptr, window_data.win_ptr,
+			mlx_pixel_put(window_data->mlx_ptr, window_data->win_ptr,
 				map[coordinate_index.y][coordinate_index.x]->render_x,
 				map[coordinate_index.y][coordinate_index.x]->render_y,
-				map[coordinate_index.y][coordinate_index.x]->color);
+				map[coordinate_index.y][coordinate_index.x]->colar);
 			coordinate_index.x++;
 		}
 		coordinate_index.y++;

@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/19 03:57:20 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/19 05:12:54 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void				free_map(t_coordinate	map_size, t_coordinate_data ***map);
 
 //make _map_u.c
 char				***make_char_map(t_coordinate	map_size, int fd);
-t_coordinate_data	***make_map(char ***char_map, t_coordinate	map_size);
+t_coordinate_data	***make_map(t_coordinate	map_size, char ***char_map);
 t_coordinate		reset_coordinate(t_coordinate	map_size);
 void				free_char_map(t_coordinate map_size, char ***char_map);
 
@@ -72,12 +72,12 @@ void				control_mlx_window(t_window_data *window_data);
 int					key_hook(int keycode, void *param);
 
 //render_map.c
-t_coordinate_data	***make_render_map(t_coordinate_data ***map,
-						t_coordinate	map_size);
+t_coordinate_data	***make_render_map(t_coordinate	map_size,
+						t_coordinate_data ***map);
 
 //render_map_u.c
-t_coordinate_data	***make_render_coordinate(t_coordinate	map_index,
-						t_coordinate_data	***map);
+t_coordinate_data	*make_render_coordinate(t_coordinate	map_index,
+										t_coordinate_data	*map);
 // void				render_map(t_window_data	*window_data);
 
 

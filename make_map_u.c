@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/19 03:09:01 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/19 05:10:25 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	***make_char_map(t_coordinate	map_size, int fd)
 	return (char_map);
 }
 
-t_coordinate_data	***make_map(char ***char_map, t_coordinate	map_size)
+t_coordinate_data	***make_map(t_coordinate	map_size, char ***char_map)
 {
 	t_coordinate_data	***map;
 	t_coordinate		coordinate_index;

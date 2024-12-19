@@ -1,3 +1,5 @@
 fdf
 *.o
 *.a
+*.gch
+testmain.c

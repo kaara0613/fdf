@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/19 13:19:08 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/19 15:23:07 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ typedef struct s_coordinate_data
 
 typedef struct s_window_data
 {
-	void	*mlx_ptr;
-	void	*win_ptr;
-	int		window_size;
+	void			*mlx_ptr;
+	void			*win_ptr;
+	t_coordinate	window_size;
 }	t_window_data;
 
 //make _map.c

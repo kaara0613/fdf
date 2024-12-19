@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:29:44 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/19 13:18:05 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/19 15:23:53 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,15 @@ t_window_data	*make_mlx_window(int window_size)
 	t_window_data		*window_data;
 
 	window_data = malloc(sizeof(t_window_data));
+	if (window_data == NULL)
+		exit (EXIT_FAILURE);
+	window_data->window_size = window_size;
 	window_data->mlx_ptr = mlx_init();
 	if (window_data->mlx_ptr == NULL)
 		return (free(window_data), NULL);
 	window_data->win_ptr
-		= mlx_new_window(window_data->mlx_ptr, window_size, window_size, "fdf");
+		= mlx_new_window
+		(window_data->mlx_ptr, window_size, window_size, "fdf");
 	if (window_data->win_ptr == NULL)
 		return (free(window_data), NULL);
 	mlx_clear_window(window_data->mlx_ptr, window_data->win_ptr);

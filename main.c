@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:31 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/18 11:23:56 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/19 03:42:42 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,14 @@ int	main(int argc, char **argv)
 		return (0);
 	map_size = map_check(argv[1]);
 	map = fdf_to_map(map_size, argv[1]);
+	map = make_render_coordinate(map_size, map);
 	for (int y = 0; y < map_size.y; y++)
 	{
 		for (int x = 0; x < map_size.x; x++)
-			printf("%d,", map[y][x]->z);
+		{
+			printf("%.2f,", map[y][x]->render_x);
+			printf("%.2f", map[y][x]->render_y);
+		}
 		printf("\n");
 	}
 	free_map(map_size, map);

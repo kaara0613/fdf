@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/18 08:44:12 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/19 03:57:20 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,10 @@ typedef struct s_coordinate
 
 typedef struct s_coordinate_data
 {
-	int	z;
-	int	colar;
+	int		z;
+	int		colar;
+	double	render_x;
+	double	render_y;
 }	t_coordinate_data;
 
 typedef struct s_window_data
@@ -54,8 +56,7 @@ void				free_map(t_coordinate	map_size, t_coordinate_data ***map);
 char				***make_char_map(t_coordinate	map_size, int fd);
 t_coordinate_data	***make_map(char ***char_map, t_coordinate	map_size);
 t_coordinate		reset_coordinate(t_coordinate	map_size);
-void	free_char_map(t_coordinate map_size, char ***char_map);
-
+void				free_char_map(t_coordinate map_size, char ***char_map);
 
 //map_check.c
 t_coordinate		map_check(char *filename);
@@ -71,8 +72,13 @@ void				control_mlx_window(t_window_data *window_data);
 int					key_hook(int keycode, void *param);
 
 //render_map.c
-void				render_map(t_window_data	*window_data);
+t_coordinate_data	***make_render_map(t_coordinate_data ***map,
+						t_coordinate	map_size);
 
+//render_map_u.c
+t_coordinate_data	***make_render_coordinate(t_coordinate	map_index,
+						t_coordinate_data	***map);
+// void				render_map(t_window_data	*window_data);
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/19 06:45:09 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/19 08:30:55 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,28 +38,32 @@ char	***make_char_map(t_coordinate	map_size, int fd)
 t_coordinate_data	***make_map(t_coordinate	map_size, char ***char_map)
 {
 	t_coordinate_data	***map;
-	t_coordinate		coordinate_index;
+	int x;
+	int y;
 
-	coordinate_index = reset_coordinate(coordinate_index);
+
+	// coordinate_index = reset_coordinate(coordinate_index);
+	x = 0;
+	y = 0;
 	map = (t_coordinate_data ***)malloc
 		(sizeof(t_coordinate_data **) * (map_size.y));
 	if (map == NULL)
 		exit (EXIT_FAILURE);
-	while (coordinate_index.y < map_size.y)
+	while (y < map_size.y)
 	{
-		map[coordinate_index.y] = (t_coordinate_data **)malloc
+		map[y] = (t_coordinate_data **)malloc
 			(sizeof(t_coordinate_data *) * (map_size.x));
-		if (map[coordinate_index.y] == NULL)
+		if (map[y] == NULL)
 			exit (EXIT_FAILURE);
-		while (coordinate_index.x < map_size.x)
+		while (x < map_size.x)
 		{
-			map[coordinate_index.y][coordinate_index.x]
+			map[y][x]
 				= make_coordinate_data
-				(char_map[coordinate_index.y][coordinate_index.x]);
-			coordinate_index.x++;
+				(char_map[y][x]);
+			x++;
 		}
-		coordinate_index.y++;
-		coordinate_index.x = 0;
+		y++;
+		x = 0;
 	}
 	return (map);
 }

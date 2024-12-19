@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:31 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/19 05:44:48 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/19 06:04:30 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int	main(int argc, char **argv)
 	{
 		for (int x = 0; x < map_size.x; x++)
 		{
-			printf("%.2f,", map[y][x]->render_x);
-			printf("%.2f", map[y][x]->render_y);
+			printf("%d:", map[y][x]->render_x);
+			printf("%d,", map[y][x]->render_y);
 		}
 		printf("\n");
 	}

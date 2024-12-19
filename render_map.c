@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:50:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/19 05:40:46 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/19 06:07:41 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ t_coordinate_data	***make_render_map(t_coordinate	map_size,
 {
 	t_coordinate	coordinate_index;
 
-			printf("a");
 	coordinate_index = reset_coordinate(coordinate_index);
 	while (coordinate_index.y < map_size.y)
 	{
@@ -31,7 +30,6 @@ t_coordinate_data	***make_render_map(t_coordinate	map_size,
 			map[coordinate_index.y][coordinate_index.x]
 				= make_render_coordinate
 				(coordinate_index, map[coordinate_index.y][coordinate_index.x]);
-			// printf("%.2f", map[coordinate_index.y][coordinate_index.x]->render_x);
 			coordinate_index.x++;
 		}
 		coordinate_index.y++;

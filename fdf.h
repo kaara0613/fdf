@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/19 05:47:15 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/19 06:03:07 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ typedef struct s_coordinate
 
 typedef struct s_coordinate_data
 {
-	int		z;
-	int		colar;
-	double	render_x;
-	double	render_y;
+	int	z;
+	int	colar;
+	int	render_x;
+	int	render_y;
 }	t_coordinate_data;
 
 typedef struct s_window_data

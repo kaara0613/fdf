@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   minilibx_use.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:29:44 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/20 01:58:02 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/20 14:00:20 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-t_window_data	*make_mlx_window(t_coordinate	map_size,
-					t_coordinate_data	***map)
+t_window_data	*make_mlx_window(t_coordinate	map_size)
 {
 	t_window_data		*window_data;
 
@@ -25,12 +24,10 @@ t_window_data	*make_mlx_window(t_coordinate	map_size,
 		return (free(window_data), NULL);
 	window_data->win_ptr
 		= mlx_new_window
-		(window_data->mlx_ptr,
-			map[map_size->x][map_size->y]->render_x + 10,
-			map[map_size->x][map_size->y]->render_y + 10, "fdf");
+		(window_data->mlx_ptr, 1000, 1000, "fdf");
 	if (window_data->win_ptr == NULL)
 		return (free(window_data), NULL);
-	t_window_data->zoom_factor = get_zoom_factor(map_size);
+	window_data->zoom_factor = get_zoom_factor(map_size);
 	mlx_clear_window(window_data->mlx_ptr, window_data->win_ptr);
 	return (window_data);
 }

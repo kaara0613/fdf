@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/20 01:55:32 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/20 14:00:47 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_coordinate
 	int	x;
 	int	y;
 	int	x_i;
-	int y_i;
+	int	y_i;
 }	t_coordinate;
 
 typedef struct s_coordinate_data
@@ -58,7 +58,6 @@ void				free_map(t_coordinate	map_size, t_coordinate_data ***map);
 //make _map_u.c
 char				***make_char_map(t_coordinate	map_size, int fd);
 t_coordinate_data	***make_map(t_coordinate	map_size, char ***char_map);
-t_coordinate		reset_coordinate(t_coordinate	map_size);
 void				free_char_map(t_coordinate map_size, char ***char_map);
 
 //map_check.c
@@ -68,21 +67,21 @@ t_coordinate		map_check(char *filename);
 t_coordinate		get_map_size(int fd, t_coordinate map_size);
 
 //make_render_map.c
-t_coordinate_data	*make_render_coordinate(t_coordinate	coordinate_index,
-						t_coordinate_data	*map);
+t_coordinate_data	***make_render_map(t_coordinate	map_size,
+						t_window_data	*window_data, t_coordinate_data ***map);
 
 //make_render_map_u.c
-
+t_coordinate_data	*make_render_coordinate(t_coordinate	map_size,
+						double zoom_factor, t_coordinate_data	*map);
 //minilibx_use.c
-t_window_data		*make_mlx_window(void);
+t_window_data		*make_mlx_window(t_coordinate	map_size);
 void				control_mlx_window(t_window_data *window_data);
 
 //minilibx_use_u.c
 int					key_hook(int keycode, void *param);
+double				get_zoom_factor(t_coordinate map_size);
 
 //render_map.c
-t_coordinate_data	***make_render_map(t_coordinate	map_size,
-						t_coordinate_data ***map);
 
 //render_map_u.c
 void				render_map(t_coordinate map_size,

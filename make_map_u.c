@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_map_u.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/20 01:30:57 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/20 13:43:17 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,17 @@ char	***make_char_map(t_coordinate	map_size, int fd)
 {
 	char				*temp;
 	char				***char_map;
-	t_coordinate		coordinate_index;
 
-	map_size->x_i = 0;
-	map_size->y_i = 0;
+	map_size.x_i = 0;
+	map_size.y_i = 0;
 	char_map = (char ***)malloc(sizeof(char **) * (map_size.y + 1));
 	if (char_map == NULL)
 		exit(EXIT_FAILURE);
-	while (map_size->y_i < map_size.y)
+	while (map_size.y_i < map_size.y)
 	{
 		temp = get_next_line(fd);
-		char_map[map_size->y_i] = ft_split(temp, ' ');
-		map_size->y_i++;
+		char_map[map_size.y_i] = ft_split(temp, ' ');
+		map_size.y_i++;
 		free(temp);
 		temp = NULL;
 	}
@@ -40,37 +39,37 @@ t_coordinate_data	***make_map(t_coordinate	map_size, char ***char_map)
 {
 	t_coordinate_data	***map;
 
-	map_size->x_i = 0;
-	map_size->y_i = 0;
+	map_size.x_i = 0;
+	map_size.y_i = 0;
 	map = (t_coordinate_data ***)malloc
 		(sizeof(t_coordinate_data **) * (map_size.y));
 	if (map == NULL)
 		exit (EXIT_FAILURE);
-	while (map_size->y_i < map_size.y)
+	while (map_size.y_i < map_size.y)
 	{
-		map[map_size->y_i] = (t_coordinate_data **)malloc
+		map[map_size.y_i] = (t_coordinate_data **)malloc
 			(sizeof(t_coordinate_data *) * (map_size.x));
-		if (map[map_size->y_i] == NULL)
+		if (map[map_size.y_i] == NULL)
 			exit (EXIT_FAILURE);
-		while (map_size->x_i < map_size.x)
+		while (map_size.x_i < map_size.x)
 		{
-			map[map_size->y_i][map_size->x_i]
+			map[map_size.y_i][map_size.x_i]
 				= make_coordinate_data
-				(char_map[map_size->y_i][map_size->x_i]);
-			map_size->x_i++;
+				(char_map[map_size.y_i][map_size.x_i]);
+			map_size.x_i++;
 		}
-		map_size->y_i++;
-		map_size->x_i = 0;
+		map_size.y_i++;
+		map_size.x_i = 0;
 	}
 	return (map);
 }
 
-t_coordinate	reset_coordinate(t_coordinate	coordinate_index)
-{
-	map_size->x_i = 0;
-	map_size->y_i = 0;
-	return (coordinate_index);
-}
+// t_coordinate	reset_coordinate(t_coordinate	coordinate_index)
+// {
+// 	map_size.x_i = 0;
+// 	map_size.y_i = 0;
+// 	return (coordinate_index);
+// }
 
 static t_coordinate_data	*make_coordinate_data(char	*char_map)
 {
@@ -111,20 +110,18 @@ static t_coordinate_data	*make_coordinate_data(char	*char_map)
 
 void	free_char_map(t_coordinate map_size, char ***char_map)
 {
-	t_coordinate	coordinate_index;
-
-	map_size->x_i = 0;
-	map_size->y_i = 0;
-	while (map_size->y_i < map_size.y)
+	map_size.x_i = 0;
+	map_size.y_i = 0;
+	while (map_size.y_i < map_size.y)
 	{
-		while (map_size->x_i < map_size.x)
+		while (map_size.x_i < map_size.x)
 		{
-			free(char_map[map_size->y_i][map_size->x_i]);
-			map_size->x_i++;
+			free(char_map[map_size.y_i][map_size.x_i]);
+			map_size.x_i++;
 		}
-		free(char_map[map_size->y_i]);
-		map_size->y_i++;
-		map_size->x_i = 0;
+		free(char_map[map_size.y_i]);
+		map_size.y_i++;
+		map_size.x_i = 0;
 	}
 	free(char_map);
 }

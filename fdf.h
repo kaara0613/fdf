@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/20 14:00:47 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/20 18:40:13 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,20 @@ typedef struct s_window_data
 {
 	void			*mlx_ptr;
 	void			*win_ptr;
+	int				window_size_x;
+	int				window_size_y;
 	double			zoom_factor;
 }	t_window_data;
+
+typedef struct s_render_size
+{
+	int	x_min;
+	int	x_max;
+	int	y_min;
+	int	y_max;
+	int	overflow_size_high;
+	int	overflow_size_width;
+}	t_render_size;
 
 //make _map.c
 t_coordinate_data	***fdf_to_map(t_coordinate map_size, char *filename);
@@ -73,6 +85,9 @@ t_coordinate_data	***make_render_map(t_coordinate	map_size,
 //make_render_map_u.c
 t_coordinate_data	*make_render_coordinate(t_coordinate	map_size,
 						double zoom_factor, t_coordinate_data	*map);
+t_render_size		*check_render_size(t_coordinate	map_size,
+						t_coordinate_data ***map);
+
 //minilibx_use.c
 t_window_data		*make_mlx_window(t_coordinate	map_size);
 void				control_mlx_window(t_window_data *window_data);

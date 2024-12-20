@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:53:19 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/19 15:23:52 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/20 01:58:45 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,10 @@ t_coordinate_data	*make_render_coordinate(t_coordinate	coordinate_index,
 	double	temp_y;
 
 	angle = M_PI / 6;
-	temp_x = (coordinate_index.x - coordinate_index.y) * cos(angle);
-	temp_y = (coordinate_index.x + coordinate_index.y)
+	temp_x = (map_size->x_i - map_size->y_i) * cos(angle);
+	temp_y = (map_size->x_i + map_size->y_i)
 		* sin(angle) - map->z;
-	map->render_x = (int)(round(temp_x * zoom_factor) + 10);
-	map->render_y = (int)(round(temp_y * zoom_factor) + 10);
+	map->render_x = (int)(round(temp_x * zoom_factor));
+	map->render_y = (int)(round(temp_y * zoom_factor));
 	return (map);
-}
-
-double	get_zoom_factor(t_coordinate map_size, t_window_data	*window_data)
-{
-	double zoom_factor;
-
-	if (map_size.x <= map_size.y)
-		zoom_factor = window_data->window_size / map_size.y
 }

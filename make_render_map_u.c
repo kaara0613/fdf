@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:49:57 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/22 16:37:43 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/22 22:04:04 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ t_coordinate_data	***update_map_to_pixels(t_coordinate	*map_size,
 {
 	map_size->x_i = 0;
 	map_size->y_i = 0;
+
+	// printf("%d, %d\n", map_size->x, map_size->y);
+	// exit(0);
 	while (map_size->y_i < map_size->y)
 	{
 		while (map_size->x_i < map_size->x)
@@ -119,7 +122,7 @@ t_coordinate_data ***adjust_negative_coordinates
 				+= render_size->overflow_size_width + 10;
 			map[map_size->y_i][map_size->x_i]->render_y
 				+= render_size->overflow_size_high + 10;
-			printf("%d, %d\n", map[map_size->y_i][map_size->x_i]->render_x, map[map_size->y_i][map_size->x_i]->render_y);
+			// printf("%d, %d\n", map[map_size->y_i][map_size->x_i]->render_x, map[map_size->y_i][map_size->x_i]->render_y);
 			map_size->x_i++;
 		}
 		map_size->x_i = 0;

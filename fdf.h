@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/22 16:30:23 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/22 21:58:50 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@
 # include "./libft/libft.h"
 
 # define ESC_KEY 65307
+
+#ifndef M_PI
+# define M_PI 3.14159265358979323846
+#endif
 
 typedef struct s_coordinate
 {
@@ -101,7 +105,8 @@ void				control_mlx_window(t_window_data *window_data);
 //minilibx_use_u.c
 t_window_data		*window_data_allocate(t_window_data	*window_data);
 int					key_hook(int keycode, void *param);
-double				get_zoom_factor(t_coordinate *map_size);
+double				get_zoom_factor(t_coordinate *map_size,
+						t_coordinate_data	***map);
 
 //render_map.c
 

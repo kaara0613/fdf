@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 03:59:51 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/22 17:39:02 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/22 21:26:49 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ t_coordinate	*get_map_size(int fd, t_coordinate *map_size)
 		map_size->y++;
 		free(read_buffer);
 	}
-	map_size->x++;
+	map_size->y -= 1;
 	return (map_size);
 }

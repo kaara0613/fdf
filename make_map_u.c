@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/20 13:43:17 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/22 16:40:33 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,60 +14,60 @@
 
 static t_coordinate_data	*make_coordinate_data(char	*char_map);
 
-char	***make_char_map(t_coordinate	map_size, int fd)
+char	***make_char_map(t_coordinate	*map_size, int fd)
 {
 	char				*temp;
 	char				***char_map;
 
-	map_size.x_i = 0;
-	map_size.y_i = 0;
-	char_map = (char ***)malloc(sizeof(char **) * (map_size.y + 1));
+	map_size->x_i = 0;
+	map_size->y_i = 0;
+	char_map = (char ***)malloc(sizeof(char **) * (map_size->y + 1));
 	if (char_map == NULL)
 		exit(EXIT_FAILURE);
-	while (map_size.y_i < map_size.y)
+	while (map_size->y_i < map_size->y)
 	{
 		temp = get_next_line(fd);
-		char_map[map_size.y_i] = ft_split(temp, ' ');
-		map_size.y_i++;
+		char_map[map_size->y_i] = ft_split(temp, ' ');
+		map_size->y_i++;
 		free(temp);
 		temp = NULL;
 	}
 	return (char_map);
 }
 
-t_coordinate_data	***make_map(t_coordinate	map_size, char ***char_map)
+t_coordinate_data	***make_map(t_coordinate	*map_size, char ***char_map)
 {
 	t_coordinate_data	***map;
 
-	map_size.x_i = 0;
-	map_size.y_i = 0;
+	map_size->x_i = 0;
+	map_size->y_i = 0;
 	map = (t_coordinate_data ***)malloc
-		(sizeof(t_coordinate_data **) * (map_size.y));
+		(sizeof(t_coordinate_data **) * (map_size->y));
 	if (map == NULL)
 		exit (EXIT_FAILURE);
-	while (map_size.y_i < map_size.y)
+	while (map_size->y_i < map_size->y)
 	{
-		map[map_size.y_i] = (t_coordinate_data **)malloc
-			(sizeof(t_coordinate_data *) * (map_size.x));
-		if (map[map_size.y_i] == NULL)
+		map[map_size->y_i] = (t_coordinate_data **)malloc
+			(sizeof(t_coordinate_data *) * (map_size->x));
+		if (map[map_size->y_i] == NULL)
 			exit (EXIT_FAILURE);
-		while (map_size.x_i < map_size.x)
+		while (map_size->x_i < map_size->x)
 		{
-			map[map_size.y_i][map_size.x_i]
+			map[map_size->y_i][map_size->x_i]
 				= make_coordinate_data
-				(char_map[map_size.y_i][map_size.x_i]);
-			map_size.x_i++;
+				(char_map[map_size->y_i][map_size->x_i]);
+			map_size->x_i++;
 		}
-		map_size.y_i++;
-		map_size.x_i = 0;
+		map_size->y_i++;
+		map_size->x_i = 0;
 	}
 	return (map);
 }
 
 // t_coordinate	reset_coordinate(t_coordinate	coordinate_index)
 // {
-// 	map_size.x_i = 0;
-// 	map_size.y_i = 0;
+// 	map_size->x_i = 0;
+// 	map_size->y_i = 0;
 // 	return (coordinate_index);
 // }
 
@@ -95,7 +95,7 @@ static t_coordinate_data	*make_coordinate_data(char	*char_map)
 	{
 		temp = ft_split(char_map, ',');
 		map->z = ft_atoi(temp[0]);
-		map->colar = ft_atoi(temp[1]);
+		map->colar = 0xFFFFFFFF; //ft_atoi(temp[1]);
 		free(temp[0]);
 		free(temp[1]);
 		free(temp);
@@ -108,20 +108,20 @@ static t_coordinate_data	*make_coordinate_data(char	*char_map)
 	return (map);
 }
 
-void	free_char_map(t_coordinate map_size, char ***char_map)
+void	free_char_map(t_coordinate *map_size, char ***char_map)
 {
-	map_size.x_i = 0;
-	map_size.y_i = 0;
-	while (map_size.y_i < map_size.y)
+	map_size->x_i = 0;
+	map_size->y_i = 0;
+	while (map_size->y_i < map_size->y)
 	{
-		while (map_size.x_i < map_size.x)
+		while (map_size->x_i < map_size->x)
 		{
-			free(char_map[map_size.y_i][map_size.x_i]);
-			map_size.x_i++;
+			free(char_map[map_size->y_i][map_size->x_i]);
+			map_size->x_i++;
 		}
-		free(char_map[map_size.y_i]);
-		map_size.y_i++;
-		map_size.x_i = 0;
+		free(char_map[map_size->y_i]);
+		map_size->y_i++;
+		map_size->x_i = 0;
 	}
 	free(char_map);
 }

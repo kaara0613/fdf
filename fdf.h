@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/22 12:44:28 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/22 16:30:23 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@
 # include "./minilibx-linux/mlx.h"
 # include "./libft/libft.h"
 
-# define BUFFER_SIZE 42
 # define ESC_KEY 65307
 
 typedef struct s_coordinate
@@ -64,47 +63,50 @@ typedef struct s_render_size
 }	t_render_size;
 
 //make _map.c
-t_coordinate_data	***fdf_to_map(t_coordinate map_size, char *filename);
-void				free_map(t_coordinate	map_size, t_coordinate_data ***map);
+t_coordinate_data	***fdf_to_map(t_coordinate *map_size, char *filename);
+void				free_map(t_coordinate	*map_size,
+						t_window_data	*window_data, t_coordinate_data ***map);
 
 //make _map_u.c
-char				***make_char_map(t_coordinate	map_size, int fd);
-t_coordinate_data	***make_map(t_coordinate	map_size, char ***char_map);
-void				free_char_map(t_coordinate map_size, char ***char_map);
+char				***make_char_map(t_coordinate	*map_size, int fd);
+t_coordinate_data	***make_map(t_coordinate	*map_size, char ***char_map);
+void				free_char_map(t_coordinate *map_size, char ***char_map);
 
 //map_check.c
-t_coordinate		map_check(char *filename);
+t_coordinate		*map_check(char *filename);
 
 //map_check_u.c
-t_coordinate		get_map_size(int fd, t_coordinate map_size);
+t_coordinate		*get_map_size(int fd, t_coordinate *map_size);
 
 //make_render_map.c
-t_coordinate_data	***make_render_map(t_coordinate	map_size,
+t_coordinate_data	***make_render_map(t_coordinate	*map_size,
 						t_window_data	*window_data, t_coordinate_data ***map);
 
 //make_render_map_u.c
-void				update_map_to_pixels(t_coordinate	map_size,
+t_coordinate_data	***update_map_to_pixels(t_coordinate	*map_size,
 						t_window_data	*window_data, t_coordinate_data ***map);
-t_coordinate_data	*make_render_coordinate(t_coordinate	map_size,
+t_coordinate_data	*make_render_coordinate(t_coordinate	*map_size,
 						double zoom_factor, t_coordinate_data	*map);
-t_render_size		*check_render_size(t_coordinate	map_size,
+t_render_size		*check_render_size(t_coordinate	*map_size,
 						t_coordinate_data ***map);
-
+t_window_data		*get_window_size(t_render_size	*render_size,
+						t_window_data	*window_data);
+t_coordinate_data	***adjust_negative_coordinates(t_coordinate	*map_size,
+						t_render_size	*render_size, t_coordinate_data ***map);
 
 //minilibx_use.c
-t_window_data		*make_mlx_window(t_coordinate	map_size,
-						t_window_data	*window_data);
+t_window_data		*make_mlx_window(t_window_data	*window_data);
 void				control_mlx_window(t_window_data *window_data);
 
 //minilibx_use_u.c
 t_window_data		*window_data_allocate(t_window_data	*window_data);
 int					key_hook(int keycode, void *param);
-double				get_zoom_factor(t_coordinate map_size);
+double				get_zoom_factor(t_coordinate *map_size);
 
 //render_map.c
 
 //render_map_u.c
-void				render_map(t_coordinate map_size,
+void				render_map(t_coordinate *map_size,
 						t_coordinate_data ***map, t_window_data	*window_data);
 
 #endif

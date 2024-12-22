@@ -6,14 +6,13 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:29:44 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/22 12:43:54 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/22 15:31:01 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-t_window_data	*make_mlx_window(t_coordinate	map_size,
-					t_window_data	*window_data)
+t_window_data	*make_mlx_window(t_window_data	*window_data)
 {
 	window_data->mlx_ptr = mlx_init();
 	if (window_data->mlx_ptr == NULL)
@@ -23,7 +22,6 @@ t_window_data	*make_mlx_window(t_coordinate	map_size,
 			window_data->window_size_x, window_data->window_size_y, "fdf");
 	if (window_data->win_ptr == NULL)
 		return (free(window_data), NULL);
-	window_data->zoom_factor = get_zoom_factor(map_size);
 	mlx_clear_window(window_data->mlx_ptr, window_data->win_ptr);
 	return (window_data);
 }

@@ -3,22 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   minilibx_use.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:29:44 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/20 18:51:37 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/22 02:04:31 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-t_window_data	*make_mlx_window(t_coordinate	map_size)
+t_window_data	*make_mlx_window(t_coordinate	map_size,
+					t_window_data	*window_data)
 {
-	t_window_data		*window_data;
-
-	window_data = malloc(sizeof(t_window_data));//mallocを別関数かつ最初の方に移動
-	if (window_data == NULL)
-		exit (EXIT_FAILURE);
 	window_data->mlx_ptr = mlx_init();
 	if (window_data->mlx_ptr == NULL)
 		return (free(window_data), NULL);

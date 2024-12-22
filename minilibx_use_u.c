@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minilibx_use_u.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:47:25 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/20 17:31:18 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/22 02:03:30 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,12 @@ double	get_zoom_factor(t_coordinate map_size)
 	else
 		zoom_factor = round((1000 / map_size.x) * 10) / 10;
 	return (zoom_factor);
+}
+
+t_window_data	window_data_allocate(t_window_data	*window_data)
+{
+	window_data = malloc(sizeof(t_window_data));
+	if (window_data == NULL)
+		exit (EXIT_FAILURE);
+	return (window_data);
 }

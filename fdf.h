@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/20 18:40:13 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/22 02:15:06 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,18 +81,22 @@ t_coordinate		get_map_size(int fd, t_coordinate map_size);
 //make_render_map.c
 t_coordinate_data	***make_render_map(t_coordinate	map_size,
 						t_window_data	*window_data, t_coordinate_data ***map);
+t_coordinate_data	***check_render_size(t_coordinate	map_size,
+						t_window_data	*window_data, t_coordinate_data ***map);
 
 //make_render_map_u.c
 t_coordinate_data	*make_render_coordinate(t_coordinate	map_size,
 						double zoom_factor, t_coordinate_data	*map);
-t_render_size		*check_render_size(t_coordinate	map_size,
-						t_coordinate_data ***map);
+t_render_size		*check_negative_coordinate(t_coordinate	map_size,
+						t_coordinate_data ***map)
 
 //minilibx_use.c
-t_window_data		*make_mlx_window(t_coordinate	map_size);
+t_window_data		*make_mlx_window(t_coordinate	map_size,
+						t_window_data	*window_data);
 void				control_mlx_window(t_window_data *window_data);
 
 //minilibx_use_u.c
+t_window_data		window_data_allocate(t_window_data	*window_data);
 int					key_hook(int keycode, void *param);
 double				get_zoom_factor(t_coordinate map_size);
 

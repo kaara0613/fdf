@@ -6,13 +6,33 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:49:57 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/20 18:48:25 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/22 13:17:02 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
 static void	render_size_reset(t_render_size *render_size);
+
+void	update_map_to_pixels(t_coordinate	map_size,
+						t_window_data	*window_data, t_coordinate_data ***map)
+{
+	map_size.x_i = 0;
+	map_size.y_i = 0;
+	while (map_size.y_i < map_size.y)
+	{
+		while (map_size.x_i < map_size.x)
+		{
+			map[map_size.y_i][map_size.x_i]
+				= make_render_coordinate
+				(map_size, window_data->zoom_factor,
+					map[map_size.y_i][map_size.x_i]);
+			map_size.x_i++;
+		}
+		map_size.y_i++;
+		map_size.x_i = 0;
+	}
+}
 
 t_coordinate_data	*make_render_coordinate(t_coordinate	map_size,
 						double zoom_factor, t_coordinate_data	*map)
@@ -80,4 +100,25 @@ static void	render_size_reset(t_render_size *render_size)
 	render_size->x_max = 0;
 	render_size->y_min = 0;
 	render_size->y_max = 0;
+}
+
+t_coordinate_data adjust_negative_coordinates
+	(t_coordinate	map_size, t_render_size	*render_size,
+		t_coordinate_data ***map)
+{
+	map_size.x_i = 0;
+	map_size.y_i = 0;
+	while (map_size.y_i < map_size.y)
+	{
+		while (map_size.x_i < map_size.x)
+		{
+			map[map_size.y_i][map_size.x_i]->render_x
+				+= render_size->overflow_size_width;
+			map[map_size.y_i][map_size.x_i]->render_y
+				+= render_size->overflow_size_high;
+			map_size.x_i++;
+		}
+		map_size.y_i++;
+		map_size.x_i = 0;
+	}
 }

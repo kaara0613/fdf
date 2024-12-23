@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf_u.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 01:44:30 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/23 05:43:30 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/23 15:57:18 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	reset_map_index(t_coordinate	*map_size)
 {
-		reset_map_index(map_size);
+		map_size->x_i = 0;
+		map_size->y_i = 0;
 }

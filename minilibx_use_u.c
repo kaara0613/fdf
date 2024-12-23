@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minilibx_use_u.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:47:25 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/23 05:45:12 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/23 16:29:32 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ double	get_zoom_factor(t_coordinate *map_size, t_coordinate_data ***map)
 
 	highest_z = find_highest_z(map_size, map);
 	if (map_size->y <= highest_z)
-		zoom_factor = round((1000 / highest_z) * 10) / 10;
+		zoom_factor = round((700 / highest_z) * 10) / 10;
 	else if (map_size->x <= map_size->y)
 		zoom_factor = round((1000 / map_size->y) * 10) / 10;
 	else

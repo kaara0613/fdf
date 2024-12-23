@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:49:57 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/23 05:45:01 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/23 10:24:20 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ t_render_size	*check_render_size(t_coordinate	*map_size,
 	reset_map_index(map_size);
 	render_size = (t_render_size *)malloc(sizeof(t_render_size));
 	if (map == NULL)
-		exit (EXIT_FAILURE);
+		free_map(1, map_size, window_data, map);
 	render_size_reset(render_size);
 	while (map_size->y_i < map_size->y)
 	{

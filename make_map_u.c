@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/23 05:45:02 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/23 10:24:36 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	***make_char_map(t_coordinate	*map_size, int fd)
 	reset_map_index(map_size);
 	char_map = (char ***)malloc(sizeof(char **) * (map_size->y + 1));
 	if (char_map == NULL)
-		exit(EXIT_FAILURE);
+		free_map(1, map_size, window_data, map);
 	while (map_size->y_i < map_size->y)
 	{
 		temp = get_next_line(fd);
@@ -42,13 +42,13 @@ t_coordinate_data	***make_map(t_coordinate	*map_size, char ***char_map)
 	map = (t_coordinate_data ***)malloc
 		(sizeof(t_coordinate_data **) * (map_size->y));
 	if (map == NULL)
-		exit (EXIT_FAILURE);
+		free_map(1, map_size, window_data, map);
 	while (map_size->y_i < map_size->y)
 	{
 		map[map_size->y_i] = (t_coordinate_data **)malloc
 			(sizeof(t_coordinate_data *) * (map_size->x));
 		if (map[map_size->y_i] == NULL)
-			exit (EXIT_FAILURE);
+			free_map(1, map_size, window_data, map);
 		while (map_size->x_i < map_size->x)
 		{
 			map[map_size->y_i][map_size->x_i]
@@ -62,13 +62,6 @@ t_coordinate_data	***make_map(t_coordinate	*map_size, char ***char_map)
 	return (map);
 }
 
-// t_coordinate	reset_coordinate(t_coordinate	coordinate_index)
-// {
-// 	map_size->x_i = 0;
-// 	map_size->y_i = 0;
-// 	return (coordinate_index);
-// }
-
 static t_coordinate_data	*make_coordinate_data(char	*char_map)
 {
 	int					i;
@@ -80,7 +73,7 @@ static t_coordinate_data	*make_coordinate_data(char	*char_map)
 		return (NULL);
 	map = (t_coordinate_data *)malloc(sizeof(t_coordinate_data));
 	if (map == NULL)
-		exit (EXIT_FAILURE);
+		free_map(1, map_size, window_data, map);
 	i = 0;
 	flag = false;
 	while (char_map[i] != '\0')

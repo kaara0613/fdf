@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:19 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/23 05:45:00 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/23 10:22:41 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,9 @@ t_coordinate_data	***fdf_to_map(t_coordinate *map_size, char *filename)
 	return (map);
 }
 
-void	free_map(t_coordinate	*map_size,
+void	free_map(int error_flag, t_coordinate	*map_size,
 			t_window_data	*window_data, t_coordinate_data ***map)
 {
-	
-
 	while (map_size->y_i < map_size->y)
 	{
 		while (map_size->x_i < map_size->x)
@@ -45,4 +43,6 @@ void	free_map(t_coordinate	*map_size,
 	free(map);
 	free(map_size);
 	free(window_data);
+	if (error_flag == 1)
+		exit(EXIT_FAILURE);
 }

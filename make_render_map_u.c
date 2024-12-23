@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_render_map_u.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:49:57 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/22 22:04:04 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/23 05:45:01 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ static void	render_size_reset(t_render_size *render_size);
 t_coordinate_data	***update_map_to_pixels(t_coordinate	*map_size,
 						t_window_data	*window_data, t_coordinate_data ***map)
 {
-	map_size->x_i = 0;
-	map_size->y_i = 0;
-
+	reset_map_index(map_size);
 	// printf("%d, %d\n", map_size->x, map_size->y);
 	// exit(0);
 	while (map_size->y_i < map_size->y)
@@ -59,8 +57,7 @@ t_render_size	*check_render_size(t_coordinate	*map_size,
 {
 	t_render_size	*render_size;
 
-	map_size->x_i = 0;
-	map_size->y_i = 0;
+	reset_map_index(map_size);
 	render_size = (t_render_size *)malloc(sizeof(t_render_size));
 	if (map == NULL)
 		exit (EXIT_FAILURE);
@@ -112,8 +109,7 @@ t_coordinate_data ***adjust_negative_coordinates
 	(t_coordinate	*map_size, t_render_size	*render_size,
 		t_coordinate_data ***map)
 {
-	map_size->x_i = 0;
-	map_size->y_i = 0;
+	reset_map_index(map_size);
 	while (map_size->y_i < map_size->y)
 	{
 		while (map_size->x_i < map_size->x)

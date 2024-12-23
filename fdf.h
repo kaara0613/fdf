@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/22 21:58:50 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/23 05:38:31 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,7 @@
 # include "./libft/libft.h"
 
 # define ESC_KEY 65307
-
-#ifndef M_PI
 # define M_PI 3.14159265358979323846
-#endif
 
 typedef struct s_coordinate
 {
@@ -109,9 +106,16 @@ double				get_zoom_factor(t_coordinate *map_size,
 						t_coordinate_data	***map);
 
 //render_map.c
-
-//render_map_u.c
 void				render_map(t_coordinate *map_size,
 						t_coordinate_data ***map, t_window_data	*window_data);
+
+//render_map_u.c
+void				drawLineBresenham_y(t_coordinate *map_size,
+						t_coordinate_data ***map, t_window_data	*window_data);
+void				drawLineBresenham_x(t_coordinate *map_size,
+						t_coordinate_data ***map, t_window_data	*window_data);
+
+//fdf_u.c
+void				reset_map_index(t_coordinate	*map_size);
 
 #endif

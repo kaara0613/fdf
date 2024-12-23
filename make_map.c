@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:19 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/22 16:28:59 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/23 05:45:00 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ t_coordinate_data	***fdf_to_map(t_coordinate *map_size, char *filename)
 void	free_map(t_coordinate	*map_size,
 			t_window_data	*window_data, t_coordinate_data ***map)
 {
-	map_size->x_i = 0;
-	map_size->y_i = 0;
+	
 
 	while (map_size->y_i < map_size->y)
 	{

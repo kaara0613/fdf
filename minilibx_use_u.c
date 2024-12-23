@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minilibx_use_u.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:47:25 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/22 22:20:06 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/23 05:45:12 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,7 @@ static int	find_highest_z(t_coordinate *map_size, t_coordinate_data ***map)
 	int		highest_z;
 
 	highest_z = 0;
-	map_size->x_i = 0;
-	map_size->y_i = 0;
+	reset_map_index(map_size);
 	while (map_size->y_i < map_size->y)
 	{
 		while (map_size->x_i < map_size->x - 1)

@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/23 10:24:36 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/24 14:36:04 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,15 +87,15 @@ static t_coordinate_data	*make_coordinate_data(char	*char_map)
 		temp = ft_split(char_map, ',');
 		map->z = ft_atoi(temp[0]);
 		map->colar = 0xFFFFFFFF; //ft_atoi(temp[1]);
-		free(temp[0]);
-		free(temp[1]);
-		free(temp);
 	}
 	else
 	{
 		map->z = ft_atoi(char_map);
 		map->colar = 0xFFFFFFFF;
 	}
+	free(temp[0]);
+	free(temp[1]);
+	free(temp);
 	return (map);
 }
 

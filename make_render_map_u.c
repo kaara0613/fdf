@@ -6,20 +6,21 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:49:57 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/23 10:24:20 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/24 14:28:18 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-static void	render_size_reset(t_render_size *render_size);
+static void				render_size_reset(t_render_size *render_size);
+static t_render_size	update_min_max(t_render_size	render_size,
+							t_coordinate	*map_size,
+							t_coordinate_data	***map);
 
 t_coordinate_data	***update_map_to_pixels(t_coordinate	*map_size,
 						t_window_data	*window_data, t_coordinate_data ***map)
 {
 	reset_map_index(map_size);
-	// printf("%d, %d\n", map_size->x, map_size->y);
-	// exit(0);
 	while (map_size->y_i < map_size->y)
 	{
 		while (map_size->x_i < map_size->x)
@@ -66,19 +67,26 @@ t_render_size	*check_render_size(t_coordinate	*map_size,
 	{
 		while (map_size->x_i < map_size->x)
 		{
-			if (render_size->x_min > map[map_size->y_i][map_size->x_i]->render_x)
-				render_size->x_min = map[map_size->y_i][map_size->x_i]->render_x;
-			if (render_size->x_max < map[map_size->y_i][map_size->x_i]->render_x)
-				render_size->x_max = map[map_size->y_i][map_size->x_i]->render_x;
-			if (render_size->y_min > map[map_size->y_i][map_size->x_i]->render_y)
-				render_size->y_min = map[map_size->y_i][map_size->x_i]->render_y;
-			if (render_size->y_max < map[map_size->y_i][map_size->x_i]->render_y)
-				render_size->y_max = map[map_size->y_i][map_size->x_i]->render_y;
+			update_min_max(render_size, map_size, map);
 			map_size->x_i++;
 		}
 		map_size->y_i++;
 		map_size->x_i = 0;
 	}
+	return (render_size);
+}
+
+static t_render_size	update_min_max(t_render_size	render_size,
+					t_coordinate	*map_size, t_coordinate_data	***map)
+{
+	if (render_size->x_min > map[map_size->y_i][map_size->x_i]->render_x)
+		render_size->x_min = map[map_size->y_i][map_size->x_i]->render_x;
+	if (render_size->x_max < map[map_size->y_i][map_size->x_i]->render_x)
+		render_size->x_max = map[map_size->y_i][map_size->x_i]->render_x;
+	if (render_size->y_min > map[map_size->y_i][map_size->x_i]->render_y)
+		render_size->y_min = map[map_size->y_i][map_size->x_i]->render_y;
+	if (render_size->y_max < map[map_size->y_i][map_size->x_i]->render_y)
+		render_size->y_max = map[map_size->y_i][map_size->x_i]->render_y;
 	return (render_size);
 }
 
@@ -105,9 +113,8 @@ static void	render_size_reset(t_render_size *render_size)
 	render_size->y_max = 0;
 }
 
-t_coordinate_data ***adjust_negative_coordinates
-	(t_coordinate	*map_size, t_render_size	*render_size,
-		t_coordinate_data ***map)
+t_coordinate_data	***adjust_negative_coordinates(t_coordinate	*map_size,
+						t_render_size	*render_size, t_coordinate_data ***map)
 {
 	reset_map_index(map_size);
 	while (map_size->y_i < map_size->y)
@@ -118,7 +125,6 @@ t_coordinate_data ***adjust_negative_coordinates
 				+= render_size->overflow_size_width + 10;
 			map[map_size->y_i][map_size->x_i]->render_y
 				+= render_size->overflow_size_high + 10;
-			// printf("%d, %d\n", map[map_size->y_i][map_size->x_i]->render_x, map[map_size->y_i][map_size->x_i]->render_y);
 			map_size->x_i++;
 		}
 		map_size->x_i = 0;

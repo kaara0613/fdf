@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/23 05:38:31 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/25 02:53:49 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,14 @@ typedef struct s_render_size
 	int	overflow_size_width;
 }	t_render_size;
 
+typedef struct s_segment
+{
+	int	x0;
+	int	y0;
+	int	x1;
+	int	y1;
+} t_segment
+
 //make _map.c
 t_coordinate_data	***fdf_to_map(t_coordinate *map_size, char *filename);
 void				free_map(t_coordinate	*map_size,
@@ -110,9 +118,9 @@ void				render_map(t_coordinate *map_size,
 						t_coordinate_data ***map, t_window_data	*window_data);
 
 //render_map_u.c
-void				drawLineBresenham_y(t_coordinate *map_size,
+void				draw_line_bresenham_y(t_coordinate *map_size,
 						t_coordinate_data ***map, t_window_data	*window_data);
-void				drawLineBresenham_x(t_coordinate *map_size,
+void				draw_line_bresenham_x(t_coordinate *map_size,
 						t_coordinate_data ***map, t_window_data	*window_data);
 
 //fdf_u.c

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minilibx_use_u.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:47:25 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/23 10:24:02 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/25 20:08:00 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	key_hook(int keycode, void *param)
 	if (keycode == ESC_KEY)
 	{
 		mlx_destroy_window(window_data->mlx_ptr, window_data->win_ptr);
-		free_map(1, map_size, window_data, map);
+		exit(EXIT_SUCCESS);
 	}
 	return (0);
 }
@@ -62,7 +62,8 @@ static int	find_highest_z(t_coordinate *map_size, t_coordinate_data ***map)
 	return (highest_z);
 }
 
-t_window_data	*window_data_allocate(t_window_data	*window_data)
+t_window_data	*window_data_allocate(t_coordinate	*map_size,
+						t_window_data	*window_data, t_coordinate_data ***map)
 {
 	window_data = (t_window_data *)malloc(sizeof(t_window_data));
 	if (window_data == NULL)

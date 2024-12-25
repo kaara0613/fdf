@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   make_render_map_u.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:49:57 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/24 14:28:18 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/25 15:27:52 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
 static void				render_size_reset(t_render_size *render_size);
-static t_render_size	update_min_max(t_render_size	render_size,
+static t_render_size	*update_min_max(t_render_size	*render_size,
 							t_coordinate	*map_size,
 							t_coordinate_data	***map);
 
@@ -54,7 +54,7 @@ t_coordinate_data	*make_render_coordinate(t_coordinate	*map_size,
 }
 
 t_render_size	*check_render_size(t_coordinate	*map_size,
-						t_coordinate_data ***map)
+						t_window_data *window_data, t_coordinate_data ***map)
 {
 	t_render_size	*render_size;
 
@@ -76,7 +76,7 @@ t_render_size	*check_render_size(t_coordinate	*map_size,
 	return (render_size);
 }
 
-static t_render_size	update_min_max(t_render_size	render_size,
+static t_render_size	*update_min_max(t_render_size	*render_size,
 					t_coordinate	*map_size, t_coordinate_data	***map)
 {
 	if (render_size->x_min > map[map_size->y_i][map_size->x_i]->render_x)

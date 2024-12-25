@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   make_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:19 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/23 10:22:41 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/25 15:05:47 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-t_coordinate_data	***fdf_to_map(t_coordinate *map_size, char *filename)
+t_coordinate_data	***fdf_to_map(char *filename, t_coordinate	*map_size,
+						t_window_data	*window_data, t_coordinate_data ***map)
 {
 	int					fd;
 	char				***char_map;
-	t_coordinate_data	***map;
 
 	fd = open(filename, O_RDONLY);
-	char_map = make_char_map(map_size, fd);
+	char_map = make_char_map(fd, map_size, window_data, map);
 	close(fd);
-	map = make_map(map_size, char_map);
+	map = make_map(map_size, window_data, char_map, map);
 	free_char_map(map_size, char_map);
 	return (map);
 }

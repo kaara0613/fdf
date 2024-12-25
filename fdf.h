@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/25 02:53:49 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/25 16:02:07 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,20 +69,25 @@ typedef struct s_segment
 	int	y0;
 	int	x1;
 	int	y1;
-} t_segment
+}	t_segment;
 
 //make _map.c
-t_coordinate_data	***fdf_to_map(t_coordinate *map_size, char *filename);
-void				free_map(t_coordinate	*map_size,
+t_coordinate_data	***fdf_to_map(char *filename, t_coordinate	*map_size,
+						t_window_data	*window_data, t_coordinate_data ***map);
+void				free_map(int error_flag, t_coordinate	*map_size,
 						t_window_data	*window_data, t_coordinate_data ***map);
 
-//make _map_u.c
-char				***make_char_map(t_coordinate	*map_size, int fd);
-t_coordinate_data	***make_map(t_coordinate	*map_size, char ***char_map);
+//make_map_u.c
+char				***make_char_map(int fd, t_coordinate	*map_size,
+						t_window_data	*window_data, t_coordinate_data ***map);
+t_coordinate_data	***make_map(t_coordinate	*map_size,
+						t_window_data	*window_data,
+						char ***char_map, t_coordinate_data ***map);
 void				free_char_map(t_coordinate *map_size, char ***char_map);
 
 //map_check.c
-t_coordinate		*map_check(char *filename);
+t_coordinate		*map_check(char *filename, t_coordinate	*map_size,
+						t_window_data	*window_data, t_coordinate_data ***map);
 
 //map_check_u.c
 t_coordinate		*get_map_size(int fd, t_coordinate *map_size);
@@ -97,7 +102,7 @@ t_coordinate_data	***update_map_to_pixels(t_coordinate	*map_size,
 t_coordinate_data	*make_render_coordinate(t_coordinate	*map_size,
 						double zoom_factor, t_coordinate_data	*map);
 t_render_size		*check_render_size(t_coordinate	*map_size,
-						t_coordinate_data ***map);
+						t_window_data *window_data, t_coordinate_data ***map);
 t_window_data		*get_window_size(t_render_size	*render_size,
 						t_window_data	*window_data);
 t_coordinate_data	***adjust_negative_coordinates(t_coordinate	*map_size,
@@ -108,19 +113,20 @@ t_window_data		*make_mlx_window(t_window_data	*window_data);
 void				control_mlx_window(t_window_data *window_data);
 
 //minilibx_use_u.c
-t_window_data		*window_data_allocate(t_window_data	*window_data);
 int					key_hook(int keycode, void *param);
 double				get_zoom_factor(t_coordinate *map_size,
-						t_coordinate_data	***map);
+						t_coordinate_data ***map);
+t_window_data		*window_data_allocate(t_coordinate	*map_size,
+						t_window_data	*window_data, t_coordinate_data ***map);
 
 //render_map.c
 void				render_map(t_coordinate *map_size,
-						t_coordinate_data ***map, t_window_data	*window_data);
+						t_window_data	*window_data, t_coordinate_data ***map);
 
 //render_map_u.c
-void				draw_line_bresenham_y(t_coordinate *map_size,
-						t_coordinate_data ***map, t_window_data	*window_data);
 void				draw_line_bresenham_x(t_coordinate *map_size,
+						t_coordinate_data ***map, t_window_data	*window_data);
+void				draw_line_bresenham_y(t_coordinate *map_size,
 						t_coordinate_data ***map, t_window_data	*window_data);
 
 //fdf_u.c

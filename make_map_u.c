@@ -6,13 +6,16 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/24 14:36:04 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/25 03:37:05 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
 static t_coordinate_data	*make_coordinate_data(char	*char_map);
+static t_coordinate_data	*atoi_to_struct(char	*char_map,
+								t_coordinate_data *map);
+static int					convert_to_rgb(char *colar);
 
 char	***make_char_map(t_coordinate	*map_size, int fd)
 {
@@ -74,6 +77,15 @@ static t_coordinate_data	*make_coordinate_data(char	*char_map)
 	map = (t_coordinate_data *)malloc(sizeof(t_coordinate_data));
 	if (map == NULL)
 		free_map(1, map_size, window_data, map);
+
+	return (map);
+}
+
+static t_coordinate_data	*atoi_to_struct(char	*char_map, t_coordinate_data *map)
+{
+	int	i;
+	int	flag;
+
 	i = 0;
 	flag = false;
 	while (char_map[i] != '\0')
@@ -86,7 +98,7 @@ static t_coordinate_data	*make_coordinate_data(char	*char_map)
 	{
 		temp = ft_split(char_map, ',');
 		map->z = ft_atoi(temp[0]);
-		map->colar = 0xFFFFFFFF; //ft_atoi(temp[1]);
+		map->colar = convert_to_rgb(temp[1]);
 	}
 	else
 	{
@@ -96,7 +108,11 @@ static t_coordinate_data	*make_coordinate_data(char	*char_map)
 	free(temp[0]);
 	free(temp[1]);
 	free(temp);
-	return (map);
+}
+
+static int	convert_to_rgb(char *colar)
+{
+
 }
 
 void	free_char_map(t_coordinate *map_size, char ***char_map)

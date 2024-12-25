@@ -3,16 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   make_map_u.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/23 05:45:02 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/25 20:46:40 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
 static t_coordinate_data	*make_coordinate_data(char	*char_map);
+static int					convert_to_rgb(char *colar);
+static void					atoi_to_struct(char	*char_map,
+								char	**temp, t_coordinate_data *map);
+static int					convert_to_rgb(char *colar);
+void						free_char_map(t_coordinate *map_size,
+								char ***char_map);
 
 char	***make_char_map(t_coordinate	*map_size, int fd)
 {
@@ -62,25 +68,24 @@ t_coordinate_data	***make_map(t_coordinate	*map_size, char ***char_map)
 	return (map);
 }
 
-// t_coordinate	reset_coordinate(t_coordinate	coordinate_index)
-// {
-// 	map_size->x_i = 0;
-// 	map_size->y_i = 0;
-// 	return (coordinate_index);
-// }
-
 static t_coordinate_data	*make_coordinate_data(char	*char_map)
 {
-	int					i;
-	bool				flag;
-	char				**temp;
 	t_coordinate_data	*map;
+	char				**temp;
 
-	if (char_map == NULL)
-		return (NULL);
+	temp = NULL;
 	map = (t_coordinate_data *)malloc(sizeof(t_coordinate_data));
 	if (map == NULL)
 		exit (EXIT_FAILURE);
+	atoi_to_struct(char_map, temp, map);
+	return (map);
+}
+
+static void	atoi_to_struct(char	*char_map, char	**temp, t_coordinate_data *map)
+{
+	int		i;
+	bool	flag;
+
 	i = 0;
 	flag = false;
 	while (char_map[i] != '\0')
@@ -93,7 +98,7 @@ static t_coordinate_data	*make_coordinate_data(char	*char_map)
 	{
 		temp = ft_split(char_map, ',');
 		map->z = ft_atoi(temp[0]);
-		map->colar = 0xFFFFFFFF; //ft_atoi(temp[1]);
+		map->colar = convert_to_rgb(temp[1]);
 		free(temp[0]);
 		free(temp[1]);
 		free(temp);
@@ -103,7 +108,26 @@ static t_coordinate_data	*make_coordinate_data(char	*char_map)
 		map->z = ft_atoi(char_map);
 		map->colar = 0xFFFFFFFF;
 	}
-	return (map);
+}
+
+static int	convert_to_rgb(char *colar)
+{
+	int	result;
+	int	temp;
+
+	result = 0;
+	if ((*colar == '0' && *(colar + 1) == 'x'))
+		colar += 2;
+	while (*colar)
+	{
+		if (ft_isdigit(*colar))
+			temp = *colar - '0';
+		else if ('A' <= *colar && *colar <= 'F')
+			temp = *colar - 'A' + 10;
+		result = (result * 16) + temp;
+		colar++;
+	}
+	return (result);
 }
 
 void	free_char_map(t_coordinate *map_size, char ***char_map)

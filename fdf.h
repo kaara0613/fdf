@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/25 20:55:41 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/30 17:43:34 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,10 @@ typedef struct s_segment
 	int	y0;
 	int	x1;
 	int	y1;
+	int	dx;
+	int	dy;
+	int	sx;
+	int	sy;
 }	t_segment;
 
 //make _map.c

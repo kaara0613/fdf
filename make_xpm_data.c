@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 20:03:29 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/31 16:19:44 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/31 18:36:25 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ char	**make_xpm_data(t_coordinate	*map_size,
 
 	colar_list = count_nums_colar_def(map_size, map);
 	xpm_data = allocation_xpm_data(colar_list, window_data);
+
 }
 
 static char	**allocation_xpm_data(int *colar_list,
@@ -31,24 +32,27 @@ static char	**allocation_xpm_data(int *colar_list,
 	char	**xpm_data;
 
 	xpm_data = (char **)malloc
-		(sizeof(char *) * window_data->window_size_y + *colar_list + 1);
+		(sizeof(char *) * window_data->window_size_y + colar_list[0] + 1);
 	if (xpm_data == NULL)
 		exit (EXIT_FAILURE);
 }
 
+//count
 static int	*count_nums_colar_def(t_coordinate	*map_size,
 				t_coordinate_data	***map)
 {
-	int i;
-	int	*colar_list;
+	int		*colar_list;
 
-	colar_list = NULL;
+	colar_list = (int *)malloc(sizeof(int) * 1);
+	if (colar_list == NULL)
+		exit(EXIT_FAILURE);
 	while (map_size->y_i < map_size->y)
 	{
 		while (map_size->x_i < map_size->x - 1)
 		{
-			while (map[map_size->y_i][map_size->x_i]->colar)
-			update_colar_list(colar_list, map[map_size->y_i][map_size->x_i]);
+			if (is_color_in_list(colar_list, map_size, map))
+				update_colar_list(colar_list,
+					map[map_size->y_i][map_size->x_i]);
 			map_size->x_i++;
 		}
 		map_size->y_i++;
@@ -57,18 +61,42 @@ static int	*count_nums_colar_def(t_coordinate	*map_size,
 	return (colar_list);
 }
 
+static bool	is_color_in_list(int	*colar_list, t_coordinate	*map_size,
+				t_coordinate_data	***map)
+{
+	bool	flag;
+	int		i;
+
+	if (map[map_size->y_i][map_size->x_i]->colar == 0)
+		return (false);
+	i = 1;
+	while (i <= colar_list[0])
+	{
+		if (colar_list[i] == map[map_size->y_i][map_size->x_i]->colar)
+		{
+			flag = false;
+			break ;
+		}
+		flag = true;
+		i++;
+	}
+	return (flag);
+}
+
 static int	*update_colar_list(int *colar_list, t_coordinate_data	*map)
 {
 	int	*temp;
 
-	if (colar_list != NULL)
-	{
-		temp = (int *)malloc(sizeof(int) * (colar_list[0] + 1));
-		if (temp == NULL)
-			exit (EXIT_FAILURE);
-		ft_mamcpy(temp, colar_list, sizeof(int) * (colar_list[0] + 1));
-		free(colar_list);
-		colar_list = NULL;
-	}
-
+	temp = (int *)malloc(sizeof(int) * (colar_list[0] + 1));
+	if (temp == NULL)
+		exit (EXIT_FAILURE);
+	ft_mamcpy(temp, colar_list, sizeof(int) * (colar_list[0] + 1));
+	temp[0]++;
+	free(colar_list);
+	colar_list = NULL;
+	colar_list = (int *)malloc(sizeof(int) * (temp[0] + 1));
+	if (colar_list == NULL)
+		exit (EXIT_FAILURE);
+	ft_mamcpy(colar_list, temp, sizeof(int) * (temp[0] + 1));
+	free(temp);
 }

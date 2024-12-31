@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:31 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/22 16:33:12 by kaara            ###   ########.fr       */
+/*   Updated: 2024/12/31 18:12:36 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 	t_window_data		*window_data;
 	t_coordinate_data	***map;
 
-	if (argc <= 1)
+	if (argc != 1)
 		return (0);
 	window_data = NULL;
 	window_data = window_data_allocate(window_data);

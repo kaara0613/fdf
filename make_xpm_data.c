@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_xpm_data.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 20:03:29 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/31 18:36:25 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/01 13:47:54 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,26 @@ char	**make_xpm_data(t_coordinate	*map_size,
 
 	colar_list = count_nums_colar_def(map_size, map);
 	xpm_data = allocation_xpm_data(colar_list, window_data);
-
+	xpm_data[0] = (colar_list, xpm_data, window_data);
 }
 
 static char	**allocation_xpm_data(int *colar_list,
 				t_window_data	*window_data)
 {
-	char	**xpm_data;
+	static char	**xpm_data;
 
 	xpm_data = (char **)malloc
 		(sizeof(char *) * window_data->window_size_y + colar_list[0] + 1);
 	if (xpm_data == NULL)
 		exit (EXIT_FAILURE);
+	return (xpm_data);
+}
+
+static char	*store_xpm_header(int	*colar_list,
+				char	*xpm_data, t_window_data	*window_data)
+{
+	xpm_data = (char *)malloc(sizeof(char) * );
+	return (xpm_data);
 }
 
 //count

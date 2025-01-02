@@ -6,17 +6,16 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/25 20:46:40 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/02 18:07:35 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
 static t_coordinate_data	*make_coordinate_data(char	*char_map);
-static int					convert_to_rgb(char *colar);
 static void					atoi_to_struct(char	*char_map,
 								char	**temp, t_coordinate_data *map);
-static int					convert_to_rgb(char *colar);
+static unsigned int			convert_to_rgb(char *colar);
 void						free_char_map(t_coordinate *map_size,
 								char ***char_map);
 
@@ -110,10 +109,10 @@ static void	atoi_to_struct(char	*char_map, char	**temp, t_coordinate_data *map)
 	}
 }
 
-static int	convert_to_rgb(char *colar)
+static unsigned int	convert_to_rgb(char *colar)
 {
-	int	result;
-	int	temp;
+	unsigned int	result;
+	unsigned int	temp;
 
 	result = 0;
 	if ((*colar == '0' && *(colar + 1) == 'x'))

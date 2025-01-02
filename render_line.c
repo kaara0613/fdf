@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:38:05 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/30 17:38:09 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/02 18:07:55 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	render_map(t_coordinate *map_size,
 			if (map_size->x_i + 1 < map_size->x)
 				draw_line_bresenham_x(map_size, map, window_data);
 			if (map_size->y_i + 1 < map_size->y)
-				draw_line_bresenham_y(map_size, map, window_data);	
+				draw_line_bresenham_y(map_size, map, window_data);
 			map_size->x_i++;
 		}
 		map_size->y_i++;

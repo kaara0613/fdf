@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:50:32 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/30 18:06:48 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/02 18:08:16 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ void	draw_line_bresenham_y(t_coordinate *map_size,
 	while (true)
 	{
 		mlx_pixel_put(window_data->mlx_ptr, window_data->win_ptr,
-			segment->y0, segment->x0, map[map_size->y_i][map_size->x_i]->colar);
+			segment->y0, segment->x0,
+			(int)map[map_size->y_i][map_size->x_i]->colar);
 		if (segment->x0 == segment->x1 && segment->y0 == segment->y1)
 			break ;
 		err = update_segment_and_error(err, segment);

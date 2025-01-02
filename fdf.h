@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/01 15:21:45 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/02 18:03:54 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,17 @@ typedef struct s_coordinate
 
 typedef struct s_coordinate_data
 {
-	int	z;
-	int	colar;
-	int	render_x;
-	int	render_y;
+	int				z;
+	unsigned int	colar;
+	int				render_x;
+	int				render_y;
 }	t_coordinate_data;
 
 typedef struct s_window_data
 {
 	void			*mlx_ptr;
 	void			*win_ptr;
-	int	window_size_x			;
+	int				window_size_x;
 	int				window_size_y;
 	double			zoom_factor;
 }	t_window_data;

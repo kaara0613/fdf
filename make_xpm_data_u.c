@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 15:29:18 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/02 18:49:04 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/04 16:12:03 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	*count_nums_colar_def(t_coordinate	*map_size,
 	colar_list = (unsigned int *)malloc(sizeof(unsigned int) * 1);
 	if (colar_list == NULL)
 		exit(EXIT_FAILURE);
+	colar_list[0] = 0;
 	while (map_size->y_i < map_size->y)
 	{
 		while (map_size->x_i < map_size->x - 1)
@@ -48,7 +49,7 @@ static bool	is_color_in_list(unsigned int	*colar_list,
 
 	if (map[map_size->y_i][map_size->x_i]->colar == 0)
 		return (false);
-	i = 1;
+	i = 2;
 	while (i <= colar_list[0])
 	{
 		if (colar_list[i] == map[map_size->y_i][map_size->x_i]->colar)
@@ -79,4 +80,13 @@ static unsigned int	*update_colar_list(unsigned int *colar_list,
 		exit (EXIT_FAILURE);
 	ft_mamcpy(colar_list, temp, sizeof(unsigned int) * (temp[0] + 1));
 	free(temp);
+}
+
+char	*store_colar_def(ssize_t	i, unsigned int colar)
+{
+	char	*result;
+
+	result = ft_itoa(i);
+	result = strjoin_update(result, " c ");
+	result = strjoin_update(result, hex_itoa(colar));
 }

@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 20:03:29 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/02 18:48:54 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/04 16:19:24 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,24 +26,28 @@ char	**make_xpm_data(t_coordinate	*map_size,
 	colar_list = count_nums_colar_def(map_size, map);
 	xpm_data = allocation_xpm_data(colar_list, window_data);
 	xpm_data[0] = store_xpm_header(colar_list, window_data);
+	xpm_data = set_background_pixel(xpm_data, window_data);
 	xpm_data = store_xpm_colar_def(colar_list, xpm_data);
 }
 
 static char	**allocation_xpm_data(unsigned int *colar_list,
 				t_window_data	*window_data)
 {
+	int			background_pixel;
 	static char	**xpm_data;
 
-	xpm_data = (char **)malloc
-		(sizeof(char *) * window_data->window_size_y + colar_list[0] + 1);
+	background_pixel = 1;
+	xpm_data = (char **)malloc(sizeof(char *) * window_data->window_size_y
+			+ (colar_list[0] + background_pixel) + 1);
 	if (xpm_data == NULL)
 		exit (EXIT_FAILURE);
 	return (xpm_data);
 }
 
-static char	*store_xpm_header(unsigned int	*colar_list, t_window_data	*window_data)
+static char	*store_xpm_header(unsigned int	*colar_list,
+				t_window_data	*window_data)
 {
-	int		arr[4];
+	int		arr[5];
 	char	*xpm_data;
 
 	arr[0] = 4;
@@ -55,7 +59,42 @@ static char	*store_xpm_header(unsigned int	*colar_list, t_window_data	*window_da
 	return (xpm_data);
 }
 
-static	char	**store_xpm_colar_def(int *colar_list, char **xpm_data)
+static	char	**store_xpm_colar_def(unsigned int *colar_list, char **xpm_data)
+{
+	ssize_t	i;
+
+	i = 0;
+	while (i <= colar_list[0])
+	{
+		xpm_data[i + 1] = store_colar_def(i, colar_list[i + 1]);
+		i++;
+	}
+	return (xpm_data);
+}
+
+static char set_background_pixel(unsigned int *colar_list,
+				char **xpm_data, t_window_data	*window_data)
+{
+	int	x_i;
+	int	y_i;
+
+	x_i = 0;
+	y_i = colar_list[0] + 1;
+	xpm_data[y_i] = (char *)malloc(sizeof(char) *
+	xpm_data[y_i]
+	while (y_i <= window_data->window_size_y)
+	{
+		xpm_data[y_i] = (char *)malloc(sizeof(char) * window_data->window_size_x);
+		if (xpm_data[y_i] == NULL)
+			return (NULL);
+		while (x_i < window_data->window_size_x)
+		{
+			windo
+		}
+	}
+}
+
+static char	**store_put_pixel_colar(char **xpm_data, t_window_data	*window_data)
 {
 	
 }

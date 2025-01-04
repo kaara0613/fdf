@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/02 18:07:35 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/04 15:07:29 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ static void	atoi_to_struct(char	*char_map, char	**temp, t_coordinate_data *map)
 	else
 	{
 		map->z = ft_atoi(char_map);
-		map->colar = 0xFFFFFFFF;
+		map->colar = 0xFFFFFF;
 	}
 }
 

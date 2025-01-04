@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:29:44 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/22 15:31:01 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/04 23:27:35 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ t_window_data	*make_mlx_window(t_window_data	*window_data)
 	return (window_data);
 }
 
-void	control_mlx_window(t_window_data *window_data)
+void	control_mlx_window(t_window_data *window_data, char **xpm_data)
 {
+	mlx_xpm_to_image(window_data->win_ptr, xpm_data,
+		window_data->window_size_x, window_data->window_size_y);
 	mlx_key_hook(window_data->win_ptr, key_hook, window_data);
 	mlx_loop(window_data->mlx_ptr);
 }

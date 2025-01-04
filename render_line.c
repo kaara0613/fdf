@@ -6,14 +6,15 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 17:38:05 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/02 18:07:55 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/04 23:15:05 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
 void	render_map(t_coordinate *map_size,
-			t_coordinate_data ***map, t_window_data	*window_data)
+			t_coordinate_data ***map,
+			char **xpm_data, t_window_data	*window_data)
 {
 	reset_map_index(map_size);
 	while (map_size->y_i < map_size->y)

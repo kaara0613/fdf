@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/03 18:57:26 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/04 23:28:24 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,8 @@ double				get_zoom_factor(t_coordinate *map_size,
 
 //render_map.c
 void				render_map(t_coordinate *map_size,
-						t_coordinate_data ***map, t_window_data	*window_data);
+						t_coordinate_data ***map,
+						char **xpm_data, t_window_data	*window_data);
 
 //render_map_u.c
 void				draw_line_bresenham_x(t_coordinate *map_size,
@@ -135,8 +136,6 @@ char				**make_xpm_data(t_coordinate	*map_size,
 						t_window_data	*window_data, t_coordinate_data	***map);
 
 //make_xpm_data_u.c
-int					*count_nums_colar_def(t_coordinate	*map_size,
-						t_coordinate_data	***map);
-char				*store_colar_def(ssize_t	i, unsigned int colar);
+
 
 #endif

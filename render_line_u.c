@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:50:32 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/02 18:08:16 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/04 23:13:27 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ static int	reset_segment_and_error(int err, t_segment	*segment);
 static int	update_segment_and_error(int err, t_segment	*segment);
 
 void	draw_line_bresenham_x(t_coordinate *map_size,
-			t_coordinate_data ***map, t_window_data	*window_data)
+			t_coordinate_data ***map, t_window_data	*window_data,
+			char **xpm_data)
 {
 	int			err;
 	t_segment	*segment;
@@ -32,8 +33,7 @@ void	draw_line_bresenham_x(t_coordinate *map_size,
 	err = reset_segment_and_error(err, segment);
 	while (true)
 	{
-		mlx_pixel_put(window_data->mlx_ptr, window_data->win_ptr,
-			segment->x0, segment->y0, map[map_size->y_i][map_size->x_i]->colar);
+		xpm_data[map_size->y_i][map_size->x_i] = '.';
 		if (segment->x0 == segment->x1 && segment->y0 == segment->y1)
 			break ;
 		err = update_segment_and_error(err, segment);
@@ -42,7 +42,8 @@ void	draw_line_bresenham_x(t_coordinate *map_size,
 }
 
 void	draw_line_bresenham_y(t_coordinate *map_size,
-			t_coordinate_data ***map, t_window_data	*window_data)
+			t_coordinate_data ***map, t_window_data	*window_data,
+			char **xpm_data)
 {
 	int			err;
 	t_segment	*segment;
@@ -58,9 +59,7 @@ void	draw_line_bresenham_y(t_coordinate *map_size,
 	err = reset_segment_and_error(err, segment);
 	while (true)
 	{
-		mlx_pixel_put(window_data->mlx_ptr, window_data->win_ptr,
-			segment->y0, segment->x0,
-			(int)map[map_size->y_i][map_size->x_i]->colar);
+		xpm_data[map_size->y_i][map_size->x_i] = '.';
 		if (segment->x0 == segment->x1 && segment->y0 == segment->y1)
 			break ;
 		err = update_segment_and_error(err, segment);

@@ -6,7 +6,7 @@
 #    By: kaara <kaara@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 15:46:31 by kaara             #+#    #+#              #
-#    Updated: 2024/12/30 17:55:40 by kaara            ###   ########.fr        #
+#    Updated: 2025/01/04 23:28:57 by kaara            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRCS = main.c\
 		make_render_map.c make_render_map_u.c \
 		minilibx_use.c minilibx_use_u.c\
 		render_line.c render_line_u.c \
-		fdf_u.c
+		fdf_u.c \
+		make_xpm_data.c
 
 
 OBJS = $(SRCS:.c=.o)

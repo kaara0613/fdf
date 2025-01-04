@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 20:03:29 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/04 10:34:49 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/04 13:33:45 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ char	**make_xpm_data(t_coordinate	*map_size,
 
 	xpm_data[0] = store_xpm_header();
 	xpm_data[1] = store_colar_def(., 0xFFFFFF);
-
-	xpm_data = set_background_pixel(xpm_data, window_data);
 	xpm_data = set_background_pixel(xpm_data, window_data);
 
 }

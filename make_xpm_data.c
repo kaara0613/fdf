@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 20:03:29 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/04 16:19:24 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/04 18:21:19 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,29 +72,38 @@ static	char	**store_xpm_colar_def(unsigned int *colar_list, char **xpm_data)
 	return (xpm_data);
 }
 
-static char set_background_pixel(unsigned int *colar_list,
+static char	set_background_pixel(unsigned int *colar_list,
 				char **xpm_data, t_window_data	*window_data)
 {
-	int	x_i;
-	int	y_i;
+	int		x_i;
+	int		y_i;
+	int		colar_def_len;
+	char	tmp[9];
 
 	x_i = 0;
 	y_i = colar_list[0] + 1;
-	xpm_data[y_i] = (char *)malloc(sizeof(char) *
-	xpm_data[y_i]
+	colar_def_len = intlen(colar_list[0]);
+	tmp[9] = "  c None";
+	xpm_data[y_i] = (char *)malloc(sizeof(char) * 9);
+	if (xpm_data[y_i] == NULL)
+		return (NULL);
+	ft_memcpy(xpm_data[y_i], tmp, sizeof(char) * 9);
 	while (y_i <= window_data->window_size_y)
 	{
-		xpm_data[y_i] = (char *)malloc(sizeof(char) * window_data->window_size_x);
+		xpm_data[y_i] = (char *)malloc
+			(sizeof(char) * window_data->window_size_x * colar_def_len);
 		if (xpm_data[y_i] == NULL)
 			return (NULL);
-		while (x_i < window_data->window_size_x)
-		{
-			windo
-		}
+		while (x_i < window_data->window_size_x * colar_def_len)
+			//find
 	}
+	return (xpm_data);
 }
 
-static char	**store_put_pixel_colar(char **xpm_data, t_window_data	*window_data)
+int	find_colar_key_line(int colar_def_len, unsigned int colar, char **xpm_data)
 {
-	
+	int		colar_key_line;
+
+
+	return (colar_key_line);
 }

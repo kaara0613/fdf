@@ -6,12 +6,12 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 15:29:18 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/04 16:12:03 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/06 19:04:54 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-//count
+
 static bool			is_color_in_list(unsigned int	*colar_list,
 						t_coordinate *map_size, t_coordinate_data	***map);
 static unsigned int	*update_colar_list(unsigned int *colar_list,

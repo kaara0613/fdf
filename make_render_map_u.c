@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:49:57 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/02 18:02:48 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/07 17:58:34 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ t_window_data	*get_window_size(t_render_size	*render_size,
 	render_size->overflow_size_high
 		= 0 - render_size->y_min;
 	free(render_size);
+	printf("%d, %d", window_data->window_size_x, window_data->window_size_y);
 	return (window_data);
 }
 

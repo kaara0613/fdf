@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/03 18:57:26 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/06 20:24:02 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct s_window_data
 {
 	void			*mlx_ptr;
 	void			*win_ptr;
+	void			*image_ptr;
 	int				window_size_x;
 	int				window_size_y;
 	double			zoom_factor;
@@ -109,7 +110,8 @@ t_coordinate_data	***adjust_negative_coordinates(t_coordinate	*map_size,
 
 //minilibx_use.c
 t_window_data		*make_mlx_window(t_window_data	*window_data);
-void				control_mlx_window(t_window_data *window_data);
+void				control_mlx_window(char **xpm_data,
+						t_window_data *window_data);
 
 //minilibx_use_u.c
 t_window_data		*window_data_allocate(t_window_data	*window_data);
@@ -119,24 +121,22 @@ double				get_zoom_factor(t_coordinate *map_size,
 
 //render_map.c
 void				render_map(t_coordinate *map_size,
-						t_coordinate_data ***map, t_window_data	*window_data);
+						t_coordinate_data ***map,
+						char **xpm_data);
 
 //render_map_u.c
 void				draw_line_bresenham_x(t_coordinate *map_size,
-						t_coordinate_data ***map, t_window_data	*window_data);
+						t_coordinate_data ***map,
+						char **xpm_data);
 void				draw_line_bresenham_y(t_coordinate *map_size,
-						t_coordinate_data ***map, t_window_data	*window_data);
+						t_coordinate_data ***map,
+						char **xpm_data);
 
 //fdf_u.c
 void				reset_map_index(t_coordinate	*map_size);
 
 //make_xpm_data.c
-char				**make_xpm_data(t_coordinate	*map_size,
-						t_window_data	*window_data, t_coordinate_data	***map);
-
-//make_xpm_data_u.c
-int					*count_nums_colar_def(t_coordinate	*map_size,
-						t_coordinate_data	***map);
-char				*store_colar_def(ssize_t	i, unsigned int colar);
+char				**make_xpm_data(t_window_data	*window_data);
+void				free_xpm(char **xpm_data, t_window_data *window_data);
 
 #endif

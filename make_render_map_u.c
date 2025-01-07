@@ -6,9 +6,10 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:49:57 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/07 17:58:34 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/07 20:07:13 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "fdf.h"
 
@@ -18,6 +19,8 @@ t_coordinate_data	***update_map_to_pixels(t_coordinate	*map_size,
 						t_window_data	*window_data, t_coordinate_data ***map)
 {
 	reset_map_index(map_size);
+	// printf("%d, %d\n", map_size->x, map_size->y);
+	// exit(0);
 	while (map_size->y_i < map_size->y)
 	{
 		while (map_size->x_i < map_size->x)
@@ -92,7 +95,6 @@ t_window_data	*get_window_size(t_render_size	*render_size,
 	render_size->overflow_size_high
 		= 0 - render_size->y_min;
 	free(render_size);
-	printf("%d, %d", window_data->window_size_x, window_data->window_size_y);
 	return (window_data);
 }
 
@@ -104,8 +106,9 @@ static void	render_size_reset(t_render_size *render_size)
 	render_size->y_max = 0;
 }
 
-t_coordinate_data ***adjust_negative_coordinates(t_coordinate	*map_size,
-						t_render_size	*render_size, t_coordinate_data ***map)
+t_coordinate_data ***adjust_negative_coordinates
+	(t_coordinate	*map_size, t_render_size	*render_size,
+		t_coordinate_data ***map)
 {
 	reset_map_index(map_size);
 	while (map_size->y_i < map_size->y)
@@ -116,6 +119,7 @@ t_coordinate_data ***adjust_negative_coordinates(t_coordinate	*map_size,
 				+= render_size->overflow_size_width + 10;
 			map[map_size->y_i][map_size->x_i]->render_y
 				+= render_size->overflow_size_high + 10;
+			// printf("%d, %d\n", map[map_size->y_i][map_size->x_i]->render_x, map[map_size->y_i][map_size->x_i]->render_y);
 			map_size->x_i++;
 		}
 		map_size->x_i = 0;

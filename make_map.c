@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:19 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/06 19:56:28 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/07 20:54:57 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ void	free_map(t_coordinate	*map_size,
 	free(map);
 	free(map_size);
 	free(window_data);
-	mlx_destroy_image(window_data->mlx_ptr, window_data->image_ptr);
+	mlx_destroy_image(window_data->mlx_ptr, window_data->img_ptr);
 }

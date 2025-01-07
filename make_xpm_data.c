@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 20:03:29 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/07 16:21:09 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/07 21:25:07 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,16 @@ char	**make_xpm_data(t_window_data	*window_data)
 
 	i = 0;
 	xpm_data = (char **)malloc
-		(sizeof(char *) * (window_data->window_size_y + 3));
+		(sizeof(char *) * (window_data->window_size_y + 4));
 	if (xpm_data == NULL)
 		exit(EXIT_FAILURE);
-	while (i <= window_data->window_size_y + 3)
+	while (i < window_data->window_size_y + 3)
 	{
 		xpm_data[i] = (char *)malloc(sizeof(char) * window_data->window_size_x);
 		if (xpm_data[i] == NULL)
 			exit(EXIT_FAILURE);
 		i++;
 	}
-	return (NULL);
 	xpm_data = store_xpm_header(xpm_data, window_data);
 	xpm_data = set_background_pixel(xpm_data, window_data);
 	return (xpm_data);
@@ -65,11 +64,18 @@ static char	**set_background_pixel(char **xpm_data,
 	y_i = 3;
 	ft_memcpy(xpm_data[1], "  c None", sizeof(char) * 9);
 	ft_memcpy(xpm_data[2], ". c 0xFFFFFF", sizeof(char) * 13);
-	while (y_i <= window_data->window_size_y)
+	printf("aaaa%d\n", window_data->window_size_x);
+	while (y_i < window_data->window_size_y + 3)
 	{
 		while (x_i < window_data->window_size_x)
-			xpm_data[y_i][x_i] = ' ';
+		{
+			xpm_data[y_i][x_i] = '1';
+			x_i++;
+		}
+		y_i++;
+		x_i = 0;
 	}
+	xpm_data[y_i] = NULL;
 	return (xpm_data);
 }
 
@@ -78,7 +84,7 @@ void	free_xpm(char **xpm_data, t_window_data *window_data)
 	int	i;
 
 	i = 0;
-	while (i <= window_data->window_size_y)
+	while (i < window_data->window_size_y + 3)
 	{
 		free(xpm_data[i]);
 		i++;

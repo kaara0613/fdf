@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/06 20:24:02 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/07 21:07:37 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,11 @@ typedef struct s_window_data
 {
 	void			*mlx_ptr;
 	void			*win_ptr;
-	void			*image_ptr;
+	void			*img_ptr;
 	int				window_size_x;
 	int				window_size_y;
+	int				image_x;
+	int				image_y;
 	double			zoom_factor;
 }	t_window_data;
 

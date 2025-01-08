@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:29:44 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/07 22:26:55 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/08 14:43:38 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,8 @@ t_window_data	*make_mlx_window(t_window_data	*window_data)
 
 void	control_mlx_window(char **xpm_data, t_window_data *window_data)
 {
-	printf("%p,%p, %p, %p\n" , window_data->mlx_ptr, xpm_data,
-			&(window_data->image_x), &(window_data->image_y));
 	window_data->img_ptr = mlx_xpm_to_image(window_data->mlx_ptr, xpm_data,
 			&window_data->image_x, &window_data->image_y);
-	exit(0);
 	mlx_put_image_to_window(window_data->mlx_ptr, window_data->win_ptr,
 		window_data->img_ptr, 0, 0);
 	mlx_key_hook(window_data->win_ptr, key_hook, window_data);

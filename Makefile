@@ -6,7 +6,7 @@
 #    By: kaara <kaara@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 15:46:31 by kaara             #+#    #+#              #
-#    Updated: 2025/01/06 19:32:11 by kaara            ###   ########.fr        #
+#    Updated: 2025/01/08 17:17:00 by kaara            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS = main.c\
 		make_xpm_data.c \
 		fdf_u.c
 
-
+TEST_SRC = tests/test00.c
 OBJS = $(SRCS:.c=.o)
 
 CC = cc
@@ -48,6 +48,7 @@ $(NAME): $(LIBFT) $(MINILIBX) $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+
 clean:
 	rm -f $(OBJS)
 	$(MAKE) -C $(LIBFT_DIR) clean
@@ -58,4 +59,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re test

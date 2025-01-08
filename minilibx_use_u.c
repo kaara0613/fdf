@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:47:25 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/07 22:28:18 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/08 14:49:05 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ double	get_zoom_factor(t_coordinate *map_size, t_coordinate_data ***map)
 
 	highest_z = find_highest_z(map_size, map);
 	if (map_size->y <= highest_z)
-		zoom_factor = round((50 / highest_z) * 10) / 10;
+		zoom_factor = round((40 / highest_z) * 10) / 10;
 	else if (map_size->x <= map_size->y)
-		zoom_factor = round((50 / map_size->y) * 10) / 10;
+		zoom_factor = round((70 / map_size->y) * 10) / 10;
 	else
-		zoom_factor = round((50 / map_size->x) * 10) / 10;
+		zoom_factor = round((70 / map_size->x) * 10) / 10;
 	return (zoom_factor);
 }
 

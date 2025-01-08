@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:50:32 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/07 20:46:05 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/08 14:40:08 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ void	draw_line_bresenham_x(t_coordinate *map_size, t_coordinate_data ***map,
 	err = reset_segment_and_error(err, segment);
 	while (true)
 	{
-		xpm_data[map[map_size->y_i][map_size->x_i]->render_y]
-		[map[map_size->y_i][map_size->x_i]->render_x] = '.';
+		xpm_data[segment->y0][segment->x0] = '.';
 		if (segment->x0 == segment->x1 && segment->y0 == segment->y1)
 			break ;
 		err = update_segment_and_error(err, segment);
@@ -58,8 +57,7 @@ void	draw_line_bresenham_y(t_coordinate *map_size, t_coordinate_data ***map,
 	err = reset_segment_and_error(err, segment);
 	while (true)
 	{
-		xpm_data[map[map_size->y_i][map_size->x_i]->render_y]
-		[map[map_size->y_i][map_size->x_i]->render_x] = '.';
+		xpm_data[segment->x0][segment->y0] = '.';
 		if (segment->x0 == segment->x1 && segment->y0 == segment->y1)
 			break ;
 		err = update_segment_and_error(err, segment);

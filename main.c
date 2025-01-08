@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:31 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/07 22:31:32 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/08 19:05:37 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,13 @@ int	main(int argc, char **argv)
 		if (xpm_data[i] == NULL)
 			printf("NULL\n");
 		else
+		{
+			printf("%ld", ft_strlen(xpm_data[i]));
 			printf("%s\n", xpm_data[i]);
+		}
 	}
 	control_mlx_window(xpm_data, window_data);
+	exit(0);
 	free_xpm(xpm_data, window_data);
 	free_map(map_size, window_data, map);
 	return (0);

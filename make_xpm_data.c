@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 20:03:29 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/08 18:06:24 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/08 20:35:01 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	**make_xpm_data(t_window_data	*window_data)
 
 static char	**store_xpm_header(char	**xpm_data, t_window_data *window_data)
 {
-	int		arr[5];
+	int		arr[7];
 	char	*tmp;
 
 	arr[0] = 4;
@@ -49,7 +49,9 @@ static char	**store_xpm_header(char	**xpm_data, t_window_data *window_data)
 	arr[2] = window_data->window_size_y;
 	arr[3] = 2;
 	arr[4] = 1;
-	tmp = int_array_to_string(arr); 
+	arr[5] = 7;
+	arr[6] = 7;
+	tmp = int_array_to_string(arr);
 	ft_memcpy(xpm_data[0], tmp, sizeof(char) * (ft_strlen(tmp) + 1));
 	free(tmp);
 	return (xpm_data);
@@ -63,8 +65,8 @@ static char	**set_background_pixel(char **xpm_data,
 
 	x_i = 0;
 	y_i = 3;
-	ft_memcpy(xpm_data[1], "  c None", sizeof(char) * 9);
-	ft_memcpy(xpm_data[2], ". c 0xFFFFFF", sizeof(char) * 13);
+	ft_memcpy(xpm_data[1], "  c None", (sizeof(char) * ft_strlen("  c None") + 1));
+	ft_memcpy(xpm_data[2], ". c 0xFFFFFF", (sizeof(char) * ft_strlen(". c 0xFFFFFF") + 1));
 	while (y_i < window_data->window_size_y + 3)
 	{
 		while (x_i < window_data->window_size_x)

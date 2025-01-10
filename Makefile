@@ -6,7 +6,7 @@
 #    By: kaara <kaara@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 15:46:31 by kaara             #+#    #+#              #
-#    Updated: 2025/01/08 17:17:00 by kaara            ###   ########.fr        #
+#    Updated: 2025/01/10 13:54:10 by kaara            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,6 @@ SRCS = main.c\
 		render_line.c render_line_u.c \
 		make_xpm_data.c \
 		fdf_u.c
-
-TEST_SRC = tests/test00.c
-OBJS = $(SRCS:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -I$(LIBFT_DIR) -I$(MINILIBX_DIR)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/02 18:03:54 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/10 05:44:54 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct s_window_data
 {
 	void			*mlx_ptr;
 	void			*win_ptr;
+	void			*img_ptr;
 	int				window_size_x;
 	int				window_size_y;
 	double			zoom_factor;

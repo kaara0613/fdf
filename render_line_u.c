@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_line_u.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:50:32 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/02 18:08:16 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/10 07:08:02 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,10 @@ void	draw_line_bresenham_y(t_coordinate *map_size,
 	err = reset_segment_and_error(err, segment);
 	while (true)
 	{
+		mlx_get_data_addr(window_data->img_ptr,
+			&bits_per_pixel, &size_line,
+			&mlx_get_color_value(window_data->mlx_ptr,
+				map[map_size->y_i][map_size->x_i]->color));
 		mlx_pixel_put(window_data->mlx_ptr, window_data->win_ptr,
 			segment->y0, segment->x0,
 			(int)map[map_size->y_i][map_size->x_i]->colar);

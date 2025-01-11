@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/10 05:44:54 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/12 00:26:31 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,10 @@ typedef struct s_window_data
 	void			*mlx_ptr;
 	void			*win_ptr;
 	void			*img_ptr;
+	int				bits_per_pixel;
+	int				size_line;
+	int				endian;
+	char			*img_data;
 	int				window_size_x;
 	int				window_size_y;
 	double			zoom_factor;
@@ -123,10 +127,10 @@ void				render_map(t_coordinate *map_size,
 						t_coordinate_data ***map, t_window_data	*window_data);
 
 //render_map_u.c
-void	draw_line_bresenham_x(t_coordinate *map_size,
-			t_coordinate_data ***map, t_window_data	*window_data);
-void	draw_line_bresenham_y(t_coordinate *map_size,
-			t_coordinate_data ***map, t_window_data	*window_data);
+void				draw_line_bresenham_x(t_coordinate *map_size,
+						t_coordinate_data ***map, t_window_data	*window_data);
+void				draw_line_bresenham_y(t_coordinate *map_size,
+						t_coordinate_data ***map, t_window_data	*window_data);
 
 //fdf_u.c
 void				reset_map_index(t_coordinate	*map_size);

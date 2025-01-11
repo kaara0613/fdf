@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_line_u.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:50:32 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/10 07:08:02 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/12 00:56:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ static int	update_segment_and_error(int err, t_segment	*segment);
 void	draw_line_bresenham_x(t_coordinate *map_size,
 			t_coordinate_data ***map, t_window_data	*window_data)
 {
-	int			err;
-	t_segment	*segment;
+	int				err;
+	int	good_colar;
+	t_segment		*segment;
 
 	err = 1;
 	segment = (t_segment *)malloc(sizeof(t_segment));
@@ -32,8 +33,12 @@ void	draw_line_bresenham_x(t_coordinate *map_size,
 	err = reset_segment_and_error(err, segment);
 	while (true)
 	{
-		mlx_pixel_put(window_data->mlx_ptr, window_data->win_ptr,
-			segment->x0, segment->y0, map[map_size->y_i][map_size->x_i]->colar);
+		good_colar = mlx_get_color_value(window_data->mlx_ptr,
+				map[map_size->y][map_size->x]->colar);
+		char *pixel_ptr = window_data->img_data 
+                  + (segment->y0 * window_data->size_line) 
+                  + (segment->x0 * (window_data->bits_per_pixel / 8));
+		*(int *)pixel_ptr = good_colar;
 		if (segment->x0 == segment->x1 && segment->y0 == segment->y1)
 			break ;
 		err = update_segment_and_error(err, segment);
@@ -44,8 +49,9 @@ void	draw_line_bresenham_x(t_coordinate *map_size,
 void	draw_line_bresenham_y(t_coordinate *map_size,
 			t_coordinate_data ***map, t_window_data	*window_data)
 {
-	int			err;
-	t_segment	*segment;
+	int				err;
+	int	good_colar;
+	t_segment		*segment;
 
 	err = 1;
 	segment = (t_segment *)malloc(sizeof(t_segment));
@@ -58,13 +64,12 @@ void	draw_line_bresenham_y(t_coordinate *map_size,
 	err = reset_segment_and_error(err, segment);
 	while (true)
 	{
-		mlx_get_data_addr(window_data->img_ptr,
-			&bits_per_pixel, &size_line,
-			&mlx_get_color_value(window_data->mlx_ptr,
-				map[map_size->y_i][map_size->x_i]->color));
-		mlx_pixel_put(window_data->mlx_ptr, window_data->win_ptr,
-			segment->y0, segment->x0,
-			(int)map[map_size->y_i][map_size->x_i]->colar);
+		good_colar = mlx_get_color_value(window_data->mlx_ptr,
+		 		map[map_size->y][map_size->x]->colar);
+		char *pixel_ptr = window_data->img_data 
+                  + (segment->x0 * window_data->size_line) 
+                  + (segment->y0 * (window_data->bits_per_pixel / 8));
+		*(int *)pixel_ptr = good_colar;
 		if (segment->x0 == segment->x1 && segment->y0 == segment->y1)
 			break ;
 		err = update_segment_and_error(err, segment);

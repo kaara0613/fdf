@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:49:57 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/12 09:37:42 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/12 21:02:19 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,9 +112,9 @@ t_coordinate_data ***adjust_negative_coordinates(t_coordinate	*map_size,
 		while (map_size->x_i < map_size->x)
 		{
 			map[map_size->y_i][map_size->x_i]->render_x
-				+= render_size->overflow_size_width;
+				+= render_size->overflow_size_width + 10;
 			map[map_size->y_i][map_size->x_i]->render_y
-				+= render_size->overflow_size_high;
+				+= render_size->overflow_size_high + 10;
 			map_size->x_i++;
 		}
 		map_size->x_i = 0;

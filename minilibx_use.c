@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:29:44 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/12 00:19:58 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/12 20:42:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_window_data	*make_mlx_window(t_window_data	*window_data)
 void	control_mlx_window(t_window_data *window_data)
 {
 	mlx_put_image_to_window(window_data->mlx_ptr,
-		window_data->win_ptr, window_data->img_ptr, 0, 0);
+		window_data->win_ptr, window_data->img_ptr, 10, 10);
 	mlx_key_hook(window_data->win_ptr, key_hook, window_data);
 	mlx_loop(window_data->mlx_ptr);
 }

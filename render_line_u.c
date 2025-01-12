@@ -6,13 +6,13 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:50:32 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/12 21:10:40 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/12 21:43:47 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-static char *update_image_data(t_coordinate *map_size,
+static unsigned int *update_image_data(t_coordinate *map_size,
 			t_coordinate_data ***map, t_window_data	*window_data, 
 			int x0, int y0);
 static int	reset_segment_and_error(int err, t_segment	*segment);
@@ -70,20 +70,18 @@ void	draw_line_bresenham_y(t_coordinate *map_size,
 	free(segment);
 }
 
-static char *update_image_data(t_coordinate *map_size,
+static unsigned int *update_image_data(t_coordinate *map_size,
 			t_coordinate_data ***map, t_window_data	*window_data, 
 			int x0, int y0)
 {
 	// mlx_pixel_put(window_data->mlx_ptr, window_data->win_ptr,
 	// 		x0, y0, map[map_size->y_i][map_size->x_i]->colar);
 	unsigned int	good_colar;
-	char 			*pixel_ptr;
 
 	good_colar = mlx_get_color_value(window_data->mlx_ptr,
 		map[map_size->y][map_size->x]->colar);
-	pixel_ptr = window_data->img_data
-		+ (y0 * (window_data->size_line / window_data->bits_per_pixel))
-		+ x0;
+	exit (0);
+	window_data->img_data[(y0 * window_data->window_size_y) + x0] = good_colar;
 	// ft_memcpy(pixel_ptr, &good_colar, sizeof(unsigned int *));
 	return (window_data->img_data);
 }

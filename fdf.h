@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/12 00:26:31 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/12 21:41:55 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ typedef struct s_window_data
 	void			*mlx_ptr;
 	void			*win_ptr;
 	void			*img_ptr;
+	unsigned int	*img_data;
 	int				bits_per_pixel;
 	int				size_line;
 	int				endian;
-	char			*img_data;
 	int				window_size_x;
 	int				window_size_y;
 	double			zoom_factor;

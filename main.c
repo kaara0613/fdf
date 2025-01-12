@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:31 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/02 18:02:14 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/12 10:51:28 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int argc, char **argv)
 	map = make_render_map(map_size, window_data, map);
 	window_data = make_mlx_window(window_data);
 	render_map(map_size, map, window_data);
+	exit(0);
 	control_mlx_window(window_data);
 	free_map(map_size, window_data, map);
 	return (0);

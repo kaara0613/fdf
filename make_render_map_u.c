@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_render_map_u.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:49:57 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/02 18:02:48 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/12 09:37:42 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,9 +112,9 @@ t_coordinate_data ***adjust_negative_coordinates(t_coordinate	*map_size,
 		while (map_size->x_i < map_size->x)
 		{
 			map[map_size->y_i][map_size->x_i]->render_x
-				+= render_size->overflow_size_width + 10;
+				+= render_size->overflow_size_width;
 			map[map_size->y_i][map_size->x_i]->render_y
-				+= render_size->overflow_size_high + 10;
+				+= render_size->overflow_size_high;
 			map_size->x_i++;
 		}
 		map_size->x_i = 0;

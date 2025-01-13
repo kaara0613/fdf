@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/13 14:24:59 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/13 17:08:28 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <math.h>
+# include <stdint.h>
 # include <X11/X.h>
 # include <X11/keysym.h>
 # include "./minilibx-linux/mlx.h"
@@ -39,7 +40,7 @@ typedef struct s_coordinate
 typedef struct s_coordinate_data
 {
 	int				z;
-	unsigned int	colar;
+	uint32_t	colar;
 	int				render_x;
 	int				render_y;
 }	t_coordinate_data;
@@ -107,7 +108,7 @@ t_coordinate_data	*make_render_coordinate(t_coordinate	*map_size,
 						double zoom_factor, t_coordinate_data	*map);
 t_render_size		*check_render_size(t_coordinate	*map_size,
 						t_coordinate_data ***map);
-t_window_data		*get_window_size(t_render_size	*render_size,
+void		get_window_size(t_render_size	*render_size,
 						t_window_data	*window_data);
 t_coordinate_data	***adjust_negative_coordinates(t_coordinate	*map_size,
 						t_render_size	*render_size, t_coordinate_data ***map);
@@ -127,10 +128,10 @@ void				render_map(t_coordinate *map_size,
 						t_coordinate_data ***map, t_window_data	*window_data);
 
 //render_map_u.c
-void	draw_line_bresenham_x(t_coordinate *map_size,
-			t_coordinate_data ***map, t_window_data	*window_data);
-void	draw_line_bresenham_y(t_coordinate *map_size,
-			t_coordinate_data ***map, t_window_data	*window_data);
+void				draw_line_bresenham_x(t_coordinate *map_size,
+						t_coordinate_data ***map, t_window_data	*window_data);
+void				draw_line_bresenham_y(t_coordinate *map_size,
+						t_coordinate_data ***map, t_window_data	*window_data);
 
 //fdf_u.c
 void				reset_map_index(t_coordinate	*map_size);

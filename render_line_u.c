@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_line_u.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:50:32 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/13 15:30:35 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/13 17:25:30 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,14 @@ void	draw_line_bresenham_y(t_coordinate *map_size,
 static void	update_img_data(t_window_data *window_data, int x, int y,
 				unsigned int colar)
 {
-	unsigned int good_colar;
+	uint32_t	good_colar;
+	char		*dest;
 
+	dest = window_data->img_data
+		+ (y * window_data->size_line)
+		+ (x * (window_data->bits_per_pixel / 8));
 	good_colar = mlx_get_color_value(window_data->mlx_ptr, colar);
-	window_data->img_data[(y * window_data->window_size_x) + x] = good_colar;
+	ft_memcpy(dest, &colar, sizeof(uint32_t));
 }
 
 static int	reset_segment_and_error(int err, t_segment *segment)

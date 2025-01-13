@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:49:57 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/02 18:02:48 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/13 16:56:24 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ t_render_size	*check_render_size(t_coordinate	*map_size,
 	return (render_size);
 }
 
-t_window_data	*get_window_size(t_render_size	*render_size,
+void	get_window_size(t_render_size	*render_size,
 				t_window_data	*window_data)
 {
 	window_data->window_size_x
@@ -92,7 +92,6 @@ t_window_data	*get_window_size(t_render_size	*render_size,
 	render_size->overflow_size_high
 		= 0 - render_size->y_min;
 	free(render_size);
-	return (window_data);
 }
 
 static void	render_size_reset(t_render_size *render_size)

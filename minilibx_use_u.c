@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minilibx_use_u.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:47:25 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/30 18:07:19 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/13 15:17:10 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	key_hook(int keycode, void *param)
 	if (keycode == ESC_KEY)
 	{
 		mlx_destroy_window(window_data->mlx_ptr, window_data->win_ptr);
-		exit(EXIT_SUCCESS);
+		exit(0);
 	}
 	return (0);
 }

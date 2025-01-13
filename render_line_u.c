@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   render_line_u.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:50:32 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/02 18:08:16 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/13 15:30:35 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
+static void	update_img_data(t_window_data *window_data, int x, int y,
+				unsigned int colar);
 static int	reset_segment_and_error(int err, t_segment	*segment);
 static int	update_segment_and_error(int err, t_segment	*segment);
 
@@ -32,8 +34,9 @@ void	draw_line_bresenham_x(t_coordinate *map_size,
 	err = reset_segment_and_error(err, segment);
 	while (true)
 	{
-		mlx_pixel_put(window_data->mlx_ptr, window_data->win_ptr,
-			segment->x0, segment->y0, map[map_size->y_i][map_size->x_i]->colar);
+		update_img_data(window_data,
+			segment->x0, segment->y0,
+			map[map_size->y_i][map_size->x_i]->colar);
 		if (segment->x0 == segment->x1 && segment->y0 == segment->y1)
 			break ;
 		err = update_segment_and_error(err, segment);
@@ -58,14 +61,23 @@ void	draw_line_bresenham_y(t_coordinate *map_size,
 	err = reset_segment_and_error(err, segment);
 	while (true)
 	{
-		mlx_pixel_put(window_data->mlx_ptr, window_data->win_ptr,
+		update_img_data(window_data,
 			segment->y0, segment->x0,
-			(int)map[map_size->y_i][map_size->x_i]->colar);
+			map[map_size->y_i][map_size->x_i]->colar);
 		if (segment->x0 == segment->x1 && segment->y0 == segment->y1)
 			break ;
 		err = update_segment_and_error(err, segment);
 	}
 	free(segment);
+}
+
+static void	update_img_data(t_window_data *window_data, int x, int y,
+				unsigned int colar)
+{
+	unsigned int good_colar;
+
+	good_colar = mlx_get_color_value(window_data->mlx_ptr, colar);
+	window_data->img_data[(y * window_data->window_size_x) + x] = good_colar;
 }
 
 static int	reset_segment_and_error(int err, t_segment *segment)

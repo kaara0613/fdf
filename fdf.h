@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/02 18:03:54 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/13 14:24:59 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@ typedef struct s_window_data
 	void			*win_ptr;
 	int				window_size_x;
 	int				window_size_y;
+	void			*img_ptr;
+	char			*img_data;
+	int				bits_per_pixel; 
+	int 			size_line;
+	int				endian;
 	double			zoom_factor;
 }	t_window_data;
 

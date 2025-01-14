@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minilibx_use_u.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:47:25 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/25 20:08:00 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/14 23:12:16 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	key_hook(int keycode, void *param)
 	if (keycode == ESC_KEY)
 	{
 		mlx_destroy_window(window_data->mlx_ptr, window_data->win_ptr);
-		exit(EXIT_SUCCESS);
+		exit(0);
 	}
 	return (0);
 }
@@ -34,11 +34,11 @@ double	get_zoom_factor(t_coordinate *map_size, t_coordinate_data ***map)
 
 	highest_z = find_highest_z(map_size, map);
 	if (map_size->y <= highest_z)
-		zoom_factor = round((700 / highest_z) * 10) / 10;
+		zoom_factor = round((400 / highest_z) * 10) / 10;
 	else if (map_size->x <= map_size->y)
-		zoom_factor = round((1000 / map_size->y) * 10) / 10;
+		zoom_factor = round((750 / map_size->y) * 10) / 10;
 	else
-		zoom_factor = round((1000 / map_size->x) * 10) / 10;
+		zoom_factor = round((750 / map_size->x) * 10) / 10;
 	return (zoom_factor);
 }
 

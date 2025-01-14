@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render_map.c                                       :+:      :+:    :+:   */
+/*   render_line.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/11 10:50:34 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/14 23:12:29 by marvin           ###   ########.fr       */
+/*   Created: 2024/12/30 17:38:05 by kaara             #+#    #+#             */
+/*   Updated: 2025/01/02 18:07:55 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
 void	render_map(t_coordinate *map_size,
-			t_window_data	*window_data, t_coordinate_data ***map)
+			t_coordinate_data ***map, t_window_data	*window_data)
 {
 	reset_map_index(map_size);
 	while (map_size->y_i < map_size->y)
@@ -23,7 +23,7 @@ void	render_map(t_coordinate *map_size,
 			if (map_size->x_i + 1 < map_size->x)
 				draw_line_bresenham_x(map_size, map, window_data);
 			if (map_size->y_i + 1 < map_size->y)
-				draw_line_bresenham_y(map_size, map, window_data);	
+				draw_line_bresenham_y(map_size, map, window_data);
 			map_size->x_i++;
 		}
 		map_size->y_i++;

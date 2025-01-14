@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/25 16:02:07 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/14 23:11:43 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <math.h>
+# include <stdint.h>
 # include <X11/X.h>
 # include <X11/keysym.h>
 # include "./minilibx-linux/mlx.h"
@@ -38,10 +39,10 @@ typedef struct s_coordinate
 
 typedef struct s_coordinate_data
 {
-	int	z;
-	int	colar;
-	int	render_x;
-	int	render_y;
+	int				z;
+	uint32_t	colar;
+	int				render_x;
+	int				render_y;
 }	t_coordinate_data;
 
 typedef struct s_window_data
@@ -50,6 +51,11 @@ typedef struct s_window_data
 	void			*win_ptr;
 	int				window_size_x;
 	int				window_size_y;
+	void			*img_ptr;
+	char			*img_data;
+	int				bits_per_pixel; 
+	int 			size_line;
+	int				endian;
 	double			zoom_factor;
 }	t_window_data;
 
@@ -69,6 +75,10 @@ typedef struct s_segment
 	int	y0;
 	int	x1;
 	int	y1;
+	int	dx;
+	int	dy;
+	int	sx;
+	int	sy;
 }	t_segment;
 
 //make _map.c
@@ -102,8 +112,8 @@ t_coordinate_data	***update_map_to_pixels(t_coordinate	*map_size,
 t_coordinate_data	*make_render_coordinate(t_coordinate	*map_size,
 						double zoom_factor, t_coordinate_data	*map);
 t_render_size		*check_render_size(t_coordinate	*map_size,
-						t_window_data *window_data, t_coordinate_data ***map);
-t_window_data		*get_window_size(t_render_size	*render_size,
+						t_coordinate_data ***map);
+void		get_window_size(t_render_size	*render_size,
 						t_window_data	*window_data);
 t_coordinate_data	***adjust_negative_coordinates(t_coordinate	*map_size,
 						t_render_size	*render_size, t_coordinate_data ***map);

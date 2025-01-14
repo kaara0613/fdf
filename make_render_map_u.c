@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_render_map_u.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:49:57 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/25 15:27:52 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/14 23:12:00 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,21 +76,7 @@ t_render_size	*check_render_size(t_coordinate	*map_size,
 	return (render_size);
 }
 
-static t_render_size	*update_min_max(t_render_size	*render_size,
-					t_coordinate	*map_size, t_coordinate_data	***map)
-{
-	if (render_size->x_min > map[map_size->y_i][map_size->x_i]->render_x)
-		render_size->x_min = map[map_size->y_i][map_size->x_i]->render_x;
-	if (render_size->x_max < map[map_size->y_i][map_size->x_i]->render_x)
-		render_size->x_max = map[map_size->y_i][map_size->x_i]->render_x;
-	if (render_size->y_min > map[map_size->y_i][map_size->x_i]->render_y)
-		render_size->y_min = map[map_size->y_i][map_size->x_i]->render_y;
-	if (render_size->y_max < map[map_size->y_i][map_size->x_i]->render_y)
-		render_size->y_max = map[map_size->y_i][map_size->x_i]->render_y;
-	return (render_size);
-}
-
-t_window_data	*get_window_size(t_render_size	*render_size,
+void	get_window_size(t_render_size	*render_size,
 				t_window_data	*window_data)
 {
 	window_data->window_size_x
@@ -102,7 +88,6 @@ t_window_data	*get_window_size(t_render_size	*render_size,
 	render_size->overflow_size_high
 		= 0 - render_size->y_min;
 	free(render_size);
-	return (window_data);
 }
 
 static void	render_size_reset(t_render_size *render_size)
@@ -113,7 +98,7 @@ static void	render_size_reset(t_render_size *render_size)
 	render_size->y_max = 0;
 }
 
-t_coordinate_data	***adjust_negative_coordinates(t_coordinate	*map_size,
+t_coordinate_data ***adjust_negative_coordinates(t_coordinate	*map_size,
 						t_render_size	*render_size, t_coordinate_data ***map)
 {
 	reset_map_index(map_size);

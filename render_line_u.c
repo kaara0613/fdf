@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_line_u.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:50:32 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/13 17:25:30 by kaara            ###   ########.fr       */
+/*   Updated: 2025/01/15 00:02:11 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static void	update_img_data(t_window_data *window_data, int x, int y,
 		+ (y * window_data->size_line)
 		+ (x * (window_data->bits_per_pixel / 8));
 	good_colar = mlx_get_color_value(window_data->mlx_ptr, colar);
-	ft_memcpy(dest, &colar, sizeof(uint32_t));
+	ft_memcpy(dest, &good_colar, sizeof(uint32_t));
 }
 
 static int	reset_segment_and_error(int err, t_segment *segment)

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../fdf.h"
 
 static t_coordinate_data	*make_coordinate_data(char	*char_map);
 static void					atoi_to_struct(char	*char_map,

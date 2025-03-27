@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../fdf.h"
 
 void	render_map(t_coordinate *map_size,
 			t_coordinate_data ***map, t_window_data	*window_data)

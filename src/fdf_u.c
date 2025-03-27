@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "fdf.h"
+# include "../fdf.h"
 
 void	reset_map_index(t_coordinate	*map_size)
 {

@@ -10,15 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../fdf.h"
 
 t_window_data	*make_mlx_window(t_window_data	*window_data)
 {
 	window_data->mlx_ptr = mlx_init();
 	if (window_data->mlx_ptr == NULL)
 		return (free(window_data), NULL);
-	printf("%d\n%d\n", window_data->window_size_x , window_data->window_size_y);
-
 	window_data->win_ptr
 		= mlx_new_window(window_data->mlx_ptr,
 			window_data->window_size_x , window_data->window_size_y, "fdf");
@@ -30,7 +28,6 @@ t_window_data	*make_mlx_window(t_window_data	*window_data)
 	window_data->img_data = mlx_get_data_addr(window_data->img_ptr,
 		&window_data->bits_per_pixel, &window_data->size_line,
 		&window_data->endian);
-	printf("%d,%d\n", window_data->size_line, window_data->bits_per_pixel);
 	return (window_data);
 }
 

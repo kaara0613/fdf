@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../fdf.h"
 
 t_coordinate	*map_check(char *filename, t_coordinate	*map_size,
 						t_window_data	*window_data, t_coordinate_data ***map)

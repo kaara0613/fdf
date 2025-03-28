@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../fdf.h"
 
 static void	update_img_data(t_window_data *window_data, int x, int y,
 				unsigned int colar);

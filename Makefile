@@ -12,13 +12,18 @@
 
 NAME = fdf
 
-SRCS = main.c\
-		map_check.c map_check_u.c \
-		make_map.c make_map_u.c \
-		make_render_map.c make_render_map_u.c \
-		minilibx_use.c minilibx_use_u.c\
-		render_line.c render_line_u.c \
-		fdf_u.c
+SRCS =	src/main.c\
+		src/map_check.c\
+		src/map_check_u.c\
+		src/make_map.c\
+		src/make_map_u.c\
+		src/make_render_map.c\
+		src/make_render_map_u.c\
+		src/minilibx_use.c\
+		src/minilibx_use_u.c\
+		src/render_line.c\
+		src/render_line_u.c\
+		src/fdf_u.c\
 
 
 OBJS = $(SRCS:.c=.o)

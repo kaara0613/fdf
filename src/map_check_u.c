@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../fdf.h"
 
 t_coordinate	*get_map_size(int fd, t_coordinate *map_size)
 {

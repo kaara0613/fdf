@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_map_u.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/14 23:24:27 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/28 14:16:33 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ t_coordinate_data	***make_map(t_coordinate	*map_size,
 			free_map(1, map_size, window_data, map);
 		while (map_size->x_i < map_size->x)
 		{
-			map = make_coordinate_data(char_map, map_size, window_data, map);
+			map[map_size->y_i][map_size->x_i]
+				= make_coordinate_data(char_map[map_size->y_i][map_size->x_i]);
 			map_size->x_i++;
 		}
 		map_size->y_i++;

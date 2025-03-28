@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/14 23:11:43 by marvin           ###   ########.fr       */
+/*   Updated: 2025/03/28 14:18:57 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,8 +111,8 @@ t_coordinate_data	***update_map_to_pixels(t_coordinate	*map_size,
 						t_window_data	*window_data, t_coordinate_data ***map);
 t_coordinate_data	*make_render_coordinate(t_coordinate	*map_size,
 						double zoom_factor, t_coordinate_data	*map);
-t_render_size		*check_render_size(t_coordinate	*map_size,
-						t_coordinate_data ***map);
+t_render_size	*check_render_size(t_coordinate	*map_size,
+					t_window_data *window_data, t_coordinate_data ***map);
 void		get_window_size(t_render_size	*render_size,
 						t_window_data	*window_data);
 t_coordinate_data	***adjust_negative_coordinates(t_coordinate	*map_size,
@@ -130,8 +130,8 @@ t_window_data		*window_data_allocate(t_coordinate	*map_size,
 						t_window_data	*window_data, t_coordinate_data ***map);
 
 //render_map.c
-void				render_map(t_coordinate *map_size,
-						t_window_data	*window_data, t_coordinate_data ***map);
+void	render_map(t_coordinate *map_size,
+	t_coordinate_data ***map, t_window_data	*window_data);
 
 //render_map_u.c
 void				draw_line_bresenham_x(t_coordinate *map_size,

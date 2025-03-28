@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_render_map_u.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:49:57 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/13 16:56:24 by kaara            ###   ########.fr       */
+/*   Updated: 2025/03/28 18:50:43 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,6 @@ void	get_window_size(t_render_size	*render_size,
 		= 0 - render_size->x_min;
 	render_size->overflow_size_high
 		= 0 - render_size->y_min;
-	free(render_size);
 }
 
 static void	render_size_reset(t_render_size *render_size)
@@ -119,5 +118,6 @@ t_coordinate_data ***adjust_negative_coordinates(t_coordinate	*map_size,
 		map_size->x_i = 0;
 		map_size->y_i++;
 	}
+	free(render_size);
 	return (map);
 }

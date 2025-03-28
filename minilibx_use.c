@@ -6,11 +6,13 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:29:44 by kaara             #+#    #+#             */
-/*   Updated: 2025/03/28 15:27:42 by kaara            ###   ########.fr       */
+/*   Updated: 2025/03/28 18:55:19 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+static int close_window(t_window_data *window_data);
 
 t_window_data	*make_mlx_window(t_window_data	*window_data)
 {
@@ -36,5 +38,13 @@ void	control_mlx_window(t_window_data *window_data)
 	mlx_put_image_to_window(window_data->mlx_ptr,
 		window_data->win_ptr, window_data->img_ptr, 0, 0);
 	mlx_key_hook(window_data->win_ptr, key_hook, window_data);
+	mlx_hook(window_data->win_ptr, 17, 0L, &close_window, window_data);
 	mlx_loop(window_data->mlx_ptr);
+}
+
+static int close_window(t_window_data *window_data)
+{
+	mlx_destroy_window(window_data->mlx_ptr, window_data->win_ptr);
+	exit(0);
+	return (0);
 }

@@ -3,28 +3,33 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kaara <kaara@student.42.fr>                +#+  +:+       +#+         #
+#    By: kaara <kaara@student.42.jp>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 15:46:31 by kaara             #+#    #+#              #
-#    Updated: 2024/12/30 17:55:40 by kaara            ###   ########.fr        #
+#    Updated: 2025/04/15 19:08:03 by kaara            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fdf
 
-SRCS = main.c\
-		map_check.c map_check_u.c \
-		make_map.c make_map_u.c \
-		make_render_map.c make_render_map_u.c \
-		minilibx_use.c minilibx_use_u.c\
-		render_line.c render_line_u.c \
-		fdf_u.c
+SRCS = src/main.c\
+		src/map_check.c \
+		src/map_check_u.c \
+		src/make_map.c \
+		src/make_map_u.c \
+		src/make_render_map.c \
+		src/make_render_map_u.c \
+		src/minilibx_use.c \
+		src/minilibx_use_u.c\
+		src/render_line.c \
+		src/render_line_u.c \
+		src/fdf_u.c \
 
 
 OBJS = $(SRCS:.c=.o)
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I$(LIBFT_DIR) -I$(MINILIBX_DIR)
+CFLAGS = -Wall -Wextra -Werror -I include -I$(LIBFT_DIR) -I$(MINILIBX_DIR)
 MLXFLAGS = -Lminilibx-linux -lmlx -lXext -lX11
 
 LIBFT_DIR = ./libft
@@ -42,7 +47,7 @@ $(MINILIBX):
 	$(MAKE) -C $(MINILIBX_DIR)
 
 $(NAME): $(LIBFT) $(MINILIBX) $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MINILIBX) $(MLXFLAGS) -lm -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -I include $(LIBFT) $(MINILIBX) $(MLXFLAGS) -lm -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

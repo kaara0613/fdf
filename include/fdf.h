@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/13 17:08:28 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/15 14:26:06 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@
 # include <stdint.h>
 # include <X11/X.h>
 # include <X11/keysym.h>
-# include "./minilibx-linux/mlx.h"
-# include "./libft/libft.h"
+# include "mlx.h"
+# include "ft_libft.h"
+# include "get_next_line.h"
 
 # define ESC_KEY 65307
 # define M_PI 3.14159265358979323846
@@ -40,23 +41,23 @@ typedef struct s_coordinate
 typedef struct s_coordinate_data
 {
 	int				z;
-	uint32_t	colar;
+	uint32_t		colar;
 	int				render_x;
 	int				render_y;
 }	t_coordinate_data;
 
 typedef struct s_window_data
 {
-	void			*mlx_ptr;
-	void			*win_ptr;
-	int				window_size_x;
-	int				window_size_y;
-	void			*img_ptr;
-	char			*img_data;
-	int				bits_per_pixel; 
-	int 			size_line;
-	int				endian;
-	double			zoom_factor;
+	void	*mlx_ptr;
+	void	*win_ptr;
+	int		window_size_x;
+	int		window_size_y;
+	void	*img_ptr;
+	char	*img_data;
+	int		bits_per_pixel;
+	int		size_line;
+	int		endian;
+	double	zoom_factor;
 }	t_window_data;
 
 typedef struct s_render_size
@@ -108,7 +109,7 @@ t_coordinate_data	*make_render_coordinate(t_coordinate	*map_size,
 						double zoom_factor, t_coordinate_data	*map);
 t_render_size		*check_render_size(t_coordinate	*map_size,
 						t_coordinate_data ***map);
-void		get_window_size(t_render_size	*render_size,
+void				get_window_size(t_render_size	*render_size,
 						t_window_data	*window_data);
 t_coordinate_data	***adjust_negative_coordinates(t_coordinate	*map_size,
 						t_render_size	*render_size, t_coordinate_data ***map);

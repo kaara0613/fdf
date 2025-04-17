@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 03:58:53 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/22 15:33:06 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/17 14:14:30 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_coordinate	*map_check(char *filename)
 	int				fd;
 	t_coordinate	*map_size;
 
-	map_size = (t_coordinate  *)malloc(sizeof(t_coordinate));
+	map_size = (t_coordinate *)malloc(sizeof(t_coordinate));
 	if (map_size == NULL)
 		exit (EXIT_FAILURE);
 	map_size->x = 0;

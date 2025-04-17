@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fdf_u.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 01:44:30 by kaara             #+#    #+#             */
-/*   Updated: 2025/01/02 18:03:04 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/17 14:22:29 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "fdf.h"
+#include "fdf.h"
 
 void	reset_map_index(t_coordinate	*map_size)
 {

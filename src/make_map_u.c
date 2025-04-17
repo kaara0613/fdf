@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/15 19:41:01 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/17 14:21:58 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,21 +127,4 @@ static unsigned int	convert_to_rgb(char *colar)
 		colar++;
 	}
 	return (result);
-}
-
-void	free_char_map(t_coordinate *map_size, char ***char_map)
-{
-	reset_map_index(map_size);
-	while (map_size->y_i < map_size->y)
-	{
-		while (map_size->x_i < map_size->x)
-		{
-			free(char_map[map_size->y_i][map_size->x_i]);
-			map_size->x_i++;
-		}
-		free(char_map[map_size->y_i]);
-		map_size->y_i++;
-		map_size->x_i = 0;
-	}
-	free(char_map);
 }

@@ -6,13 +6,13 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:29:44 by kaara             #+#    #+#             */
-/*   Updated: 2025/03/28 18:55:19 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/17 14:15:01 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-static int close_window(t_window_data *window_data);
+static int	close_window(t_window_data *window_data);
 
 t_window_data	*make_mlx_window(t_window_data	*window_data)
 {
@@ -21,15 +21,15 @@ t_window_data	*make_mlx_window(t_window_data	*window_data)
 		return (free(window_data), NULL);
 	window_data->win_ptr
 		= mlx_new_window(window_data->mlx_ptr,
-			window_data->window_size_x , window_data->window_size_y, "fdf");
+			window_data->window_size_x, window_data->window_size_y, "fdf");
 	if (window_data->win_ptr == NULL)
 		return (free(window_data), NULL);
 	mlx_clear_window(window_data->mlx_ptr, window_data->win_ptr);
 	window_data->img_ptr = mlx_new_image(window_data->mlx_ptr,
-		window_data->window_size_x, window_data->window_size_y);
+			window_data->window_size_x, window_data->window_size_y);
 	window_data->img_data = mlx_get_data_addr(window_data->img_ptr,
-		&window_data->bits_per_pixel, &window_data->size_line,
-		&window_data->endian);
+			&window_data->bits_per_pixel, &window_data->size_line,
+			&window_data->endian);
 	return (window_data);
 }
 
@@ -42,7 +42,7 @@ void	control_mlx_window(t_window_data *window_data)
 	mlx_loop(window_data->mlx_ptr);
 }
 
-static int close_window(t_window_data *window_data)
+static int	close_window(t_window_data *window_data)
 {
 	mlx_destroy_window(window_data->mlx_ptr, window_data->win_ptr);
 	exit(0);

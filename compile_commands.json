@@ -1,0 +1,1668 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_atoi.o",
+      "ft_libft/ft_atoi.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_atoi.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_atoi.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_memchr.o",
+      "ft_libft/ft_memchr.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_memchr.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_memchr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_split.o",
+      "ft_libft/ft_split.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_split.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_split.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_strncmp.o",
+      "ft_libft/ft_strncmp.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_strncmp.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_strncmp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_bzero.o",
+      "ft_libft/ft_bzero.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_bzero.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_bzero.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_memcmp.o",
+      "ft_libft/ft_memcmp.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_memcmp.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_memcmp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_strchr.o",
+      "ft_libft/ft_strchr.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_strchr.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_strchr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_strnstr.o",
+      "ft_libft/ft_strnstr.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_strnstr.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_strnstr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_calloc.o",
+      "ft_libft/ft_calloc.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_calloc.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_calloc.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_memcpy.o",
+      "ft_libft/ft_memcpy.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_memcpy.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_memcpy.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_strdup.o",
+      "ft_libft/ft_strdup.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_strdup.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_strdup.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_strrchr.o",
+      "ft_libft/ft_strrchr.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_strrchr.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_strrchr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_isalnum.o",
+      "ft_libft/ft_isalnum.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_isalnum.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_isalnum.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_memmove.o",
+      "ft_libft/ft_memmove.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_memmove.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_memmove.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_striteri.o",
+      "ft_libft/ft_striteri.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_striteri.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_striteri.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_strtrim.o",
+      "ft_libft/ft_strtrim.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_strtrim.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_strtrim.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_isalpha.o",
+      "ft_libft/ft_isalpha.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_isalpha.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_isalpha.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_memset.o",
+      "ft_libft/ft_memset.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_memset.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_memset.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_strjoin.o",
+      "ft_libft/ft_strjoin.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_strjoin.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_strjoin.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_substr.o",
+      "ft_libft/ft_substr.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_substr.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_substr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_isascii.o",
+      "ft_libft/ft_isascii.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_isascii.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_isascii.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_putchar_fd.o",
+      "ft_libft/ft_putchar_fd.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_putchar_fd.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_putchar_fd.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_strlcat.o",
+      "ft_libft/ft_strlcat.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_strlcat.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_strlcat.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_tolower.o",
+      "ft_libft/ft_tolower.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_tolower.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_tolower.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_isdigit.o",
+      "ft_libft/ft_isdigit.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_isdigit.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_isdigit.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_putendl_fd.o",
+      "ft_libft/ft_putendl_fd.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_putendl_fd.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_putendl_fd.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_strlcpy.o",
+      "ft_libft/ft_strlcpy.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_strlcpy.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_strlcpy.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_toupper.o",
+      "ft_libft/ft_toupper.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_toupper.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_toupper.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_isprint.o",
+      "ft_libft/ft_isprint.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_isprint.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_isprint.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_putnbr_fd.o",
+      "ft_libft/ft_putnbr_fd.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_putnbr_fd.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_putnbr_fd.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_strlen.o",
+      "ft_libft/ft_strlen.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_strlen.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_strlen.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_itoa.o",
+      "ft_libft/ft_itoa.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_itoa.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_itoa.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_putstr_fd.o",
+      "ft_libft/ft_putstr_fd.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_putstr_fd.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_putstr_fd.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_libft/ft_strmapi.o",
+      "ft_libft/ft_strmapi.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_libft/ft_strmapi.c",
+    "output": "/home/kaara/42/fdf/libft/ft_libft/ft_strmapi.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "list/list_int_insert_at.o",
+      "list/list_int_insert_at.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/list/list_int_insert_at.c",
+    "output": "/home/kaara/42/fdf/libft/list/list_int_insert_at.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "list/list_int_pop_at.o",
+      "list/list_int_pop_at.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/list/list_int_pop_at.c",
+    "output": "/home/kaara/42/fdf/libft/list/list_int_pop_at.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "list/list_int_pop_back.o",
+      "list/list_int_pop_back.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/list/list_int_pop_back.c",
+    "output": "/home/kaara/42/fdf/libft/list/list_int_pop_back.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "list/list_int_pop.o",
+      "list/list_int_pop.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/list/list_int_pop.c",
+    "output": "/home/kaara/42/fdf/libft/list/list_int_pop.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "list/list_int_print.o",
+      "list/list_int_print.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/list/list_int_print.c",
+    "output": "/home/kaara/42/fdf/libft/list/list_int_print.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "list/list_int_push.o",
+      "list/list_int_push.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/list/list_int_push.c",
+    "output": "/home/kaara/42/fdf/libft/list/list_int_push.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "list/list_int_rev_rotate.o",
+      "list/list_int_rev_rotate.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/list/list_int_rev_rotate.c",
+    "output": "/home/kaara/42/fdf/libft/list/list_int_rev_rotate.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "list/list_int_rotate.o",
+      "list/list_int_rotate.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/list/list_int_rotate.c",
+    "output": "/home/kaara/42/fdf/libft/list/list_int_rotate.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "list/list_int_clone.o",
+      "list/list_int_clone.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/list/list_int_clone.c",
+    "output": "/home/kaara/42/fdf/libft/list/list_int_clone.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "list/list_int_access_at.o",
+      "list/list_int_access_at.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/list/list_int_access_at.c",
+    "output": "/home/kaara/42/fdf/libft/list/list_int_access_at.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "list/list_void_clear.o",
+      "list/list_void_clear.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/list/list_void_clear.c",
+    "output": "/home/kaara/42/fdf/libft/list/list_void_clear.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "list/list_int_sort.o",
+      "list/list_int_sort.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/list/list_int_sort.c",
+    "output": "/home/kaara/42/fdf/libft/list/list_int_sort.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "list/list_int_count.o",
+      "list/list_int_count.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/list/list_int_count.c",
+    "output": "/home/kaara/42/fdf/libft/list/list_int_count.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_printf/handle_format.o",
+      "ft_printf/handle_format.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_printf/handle_format.c",
+    "output": "/home/kaara/42/fdf/libft/ft_printf/handle_format.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_printf/hex_handle_format2.o",
+      "ft_printf/hex_handle_format2.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_printf/hex_handle_format2.c",
+    "output": "/home/kaara/42/fdf/libft/ft_printf/hex_handle_format2.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "ft_printf/libftprintf.o",
+      "ft_printf/libftprintf.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/ft_printf/libftprintf.c",
+    "output": "/home/kaara/42/fdf/libft/ft_printf/libftprintf.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "gnl/get_next_line.o",
+      "gnl/get_next_line.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/gnl/get_next_line.c",
+    "output": "/home/kaara/42/fdf/libft/gnl/get_next_line.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-I",
+      "include",
+      "-g",
+      "-Iinclude",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-c",
+      "-o",
+      "gnl/get_next_line_utils.o",
+      "gnl/get_next_line_utils.c"
+    ],
+    "directory": "/home/kaara/42/fdf/libft",
+    "file": "/home/kaara/42/fdf/libft/gnl/get_next_line_utils.c",
+    "output": "/home/kaara/42/fdf/libft/gnl/get_next_line_utils.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_init.o",
+      "mlx_init.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_init.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_init.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_new_window.o",
+      "mlx_new_window.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_new_window.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_new_window.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_pixel_put.o",
+      "mlx_pixel_put.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_pixel_put.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_pixel_put.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_loop.o",
+      "mlx_loop.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_loop.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_loop.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_mouse_hook.o",
+      "mlx_mouse_hook.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_mouse_hook.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_mouse_hook.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_key_hook.o",
+      "mlx_key_hook.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_key_hook.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_key_hook.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_expose_hook.o",
+      "mlx_expose_hook.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_expose_hook.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_expose_hook.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_loop_hook.o",
+      "mlx_loop_hook.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_loop_hook.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_loop_hook.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_int_anti_resize_win.o",
+      "mlx_int_anti_resize_win.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_int_anti_resize_win.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_int_anti_resize_win.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_int_do_nothing.o",
+      "mlx_int_do_nothing.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_int_do_nothing.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_int_do_nothing.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_int_wait_first_expose.o",
+      "mlx_int_wait_first_expose.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_int_wait_first_expose.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_int_wait_first_expose.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_int_get_visual.o",
+      "mlx_int_get_visual.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_int_get_visual.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_int_get_visual.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_flush_event.o",
+      "mlx_flush_event.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_flush_event.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_flush_event.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_string_put.o",
+      "mlx_string_put.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_string_put.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_string_put.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_set_font.o",
+      "mlx_set_font.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_set_font.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_set_font.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_new_image.o",
+      "mlx_new_image.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_new_image.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_new_image.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_get_data_addr.o",
+      "mlx_get_data_addr.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_get_data_addr.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_get_data_addr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_put_image_to_window.o",
+      "mlx_put_image_to_window.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_put_image_to_window.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_put_image_to_window.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_get_color_value.o",
+      "mlx_get_color_value.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_get_color_value.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_get_color_value.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_clear_window.o",
+      "mlx_clear_window.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_clear_window.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_clear_window.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_xpm.o",
+      "mlx_xpm.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_xpm.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_xpm.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_int_str_to_wordtab.o",
+      "mlx_int_str_to_wordtab.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_int_str_to_wordtab.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_int_str_to_wordtab.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_destroy_window.o",
+      "mlx_destroy_window.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_destroy_window.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_destroy_window.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_int_param_event.o",
+      "mlx_int_param_event.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_int_param_event.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_int_param_event.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_int_set_win_event_mask.o",
+      "mlx_int_set_win_event_mask.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_int_set_win_event_mask.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_int_set_win_event_mask.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_hook.o",
+      "mlx_hook.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_hook.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_hook.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_rgb.o",
+      "mlx_rgb.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_rgb.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_rgb.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_destroy_image.o",
+      "mlx_destroy_image.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_destroy_image.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_destroy_image.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_mouse.o",
+      "mlx_mouse.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_mouse.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_mouse.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_screen_size.o",
+      "mlx_screen_size.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_screen_size.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_screen_size.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-O3",
+      "-I/usr/include",
+      "-c",
+      "-o",
+      "obj/mlx_destroy_display.o",
+      "mlx_destroy_display.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux",
+    "file": "/home/kaara/42/fdf/minilibx-linux/mlx_destroy_display.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/obj/mlx_destroy_display.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I/usr/include",
+      "-O3",
+      "-I..",
+      "-g",
+      "-c",
+      "-o",
+      "main.o",
+      "main.c"
+    ],
+    "directory": "/home/kaara/42/fdf/minilibx-linux/test",
+    "file": "/home/kaara/42/fdf/minilibx-linux/test/main.c",
+    "output": "/home/kaara/42/fdf/minilibx-linux/test/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I",
+      "include",
+      "-I./libft",
+      "-I./minilibx-linux",
+      "-c",
+      "-o",
+      "src/main.o",
+      "src/main.c"
+    ],
+    "directory": "/home/kaara/42/fdf",
+    "file": "/home/kaara/42/fdf/src/main.c",
+    "output": "/home/kaara/42/fdf/src/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I",
+      "include",
+      "-I./libft",
+      "-I./minilibx-linux",
+      "-c",
+      "-o",
+      "src/map_check.o",
+      "src/map_check.c"
+    ],
+    "directory": "/home/kaara/42/fdf",
+    "file": "/home/kaara/42/fdf/src/map_check.c",
+    "output": "/home/kaara/42/fdf/src/map_check.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I",
+      "include",
+      "-I./libft",
+      "-I./minilibx-linux",
+      "-c",
+      "-o",
+      "src/map_check_u.o",
+      "src/map_check_u.c"
+    ],
+    "directory": "/home/kaara/42/fdf",
+    "file": "/home/kaara/42/fdf/src/map_check_u.c",
+    "output": "/home/kaara/42/fdf/src/map_check_u.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I",
+      "include",
+      "-I./libft",
+      "-I./minilibx-linux",
+      "-c",
+      "-o",
+      "src/make_map.o",
+      "src/make_map.c"
+    ],
+    "directory": "/home/kaara/42/fdf",
+    "file": "/home/kaara/42/fdf/src/make_map.c",
+    "output": "/home/kaara/42/fdf/src/make_map.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I",
+      "include",
+      "-I./libft",
+      "-I./minilibx-linux",
+      "-c",
+      "-o",
+      "src/make_map_u.o",
+      "src/make_map_u.c"
+    ],
+    "directory": "/home/kaara/42/fdf",
+    "file": "/home/kaara/42/fdf/src/make_map_u.c",
+    "output": "/home/kaara/42/fdf/src/make_map_u.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I",
+      "include",
+      "-I./libft",
+      "-I./minilibx-linux",
+      "-c",
+      "-o",
+      "src/make_render_map.o",
+      "src/make_render_map.c"
+    ],
+    "directory": "/home/kaara/42/fdf",
+    "file": "/home/kaara/42/fdf/src/make_render_map.c",
+    "output": "/home/kaara/42/fdf/src/make_render_map.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I",
+      "include",
+      "-I./libft",
+      "-I./minilibx-linux",
+      "-c",
+      "-o",
+      "src/make_render_map_u.o",
+      "src/make_render_map_u.c"
+    ],
+    "directory": "/home/kaara/42/fdf",
+    "file": "/home/kaara/42/fdf/src/make_render_map_u.c",
+    "output": "/home/kaara/42/fdf/src/make_render_map_u.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I",
+      "include",
+      "-I./libft",
+      "-I./minilibx-linux",
+      "-c",
+      "-o",
+      "src/minilibx_use.o",
+      "src/minilibx_use.c"
+    ],
+    "directory": "/home/kaara/42/fdf",
+    "file": "/home/kaara/42/fdf/src/minilibx_use.c",
+    "output": "/home/kaara/42/fdf/src/minilibx_use.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I",
+      "include",
+      "-I./libft",
+      "-I./minilibx-linux",
+      "-c",
+      "-o",
+      "src/minilibx_use_u.o",
+      "src/minilibx_use_u.c"
+    ],
+    "directory": "/home/kaara/42/fdf",
+    "file": "/home/kaara/42/fdf/src/minilibx_use_u.c",
+    "output": "/home/kaara/42/fdf/src/minilibx_use_u.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I",
+      "include",
+      "-I./libft",
+      "-I./minilibx-linux",
+      "-c",
+      "-o",
+      "src/render_line.o",
+      "src/render_line.c"
+    ],
+    "directory": "/home/kaara/42/fdf",
+    "file": "/home/kaara/42/fdf/src/render_line.c",
+    "output": "/home/kaara/42/fdf/src/render_line.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I",
+      "include",
+      "-I./libft",
+      "-I./minilibx-linux",
+      "-c",
+      "-o",
+      "src/render_line_u.o",
+      "src/render_line_u.c"
+    ],
+    "directory": "/home/kaara/42/fdf",
+    "file": "/home/kaara/42/fdf/src/render_line_u.c",
+    "output": "/home/kaara/42/fdf/src/render_line_u.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I",
+      "include",
+      "-I./libft",
+      "-I./minilibx-linux",
+      "-c",
+      "-o",
+      "src/fdf_u.o",
+      "src/fdf_u.c"
+    ],
+    "directory": "/home/kaara/42/fdf",
+    "file": "/home/kaara/42/fdf/src/fdf_u.c",
+    "output": "/home/kaara/42/fdf/src/fdf_u.o"
+  }
+]

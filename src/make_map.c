@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:19 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/17 14:23:13 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/18 16:07:27 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,34 @@ t_coordinate_data	***fdf_to_map(t_coordinate *map_size, char *filename)
 	close(fd);
 	map = make_map(map_size, char_map);
 	free_char_map(map_size, char_map);
+	return (map);
+}
+
+t_coordinate_data	***make_map(t_coordinate	*map_size, char ***char_map)
+{
+	t_coordinate_data	***map;
+
+	reset_map_index(map_size);
+	map = (t_coordinate_data ***)malloc
+		(sizeof(t_coordinate_data **) * (map_size->y));
+	if (map == NULL)
+		exit (EXIT_FAILURE);
+	while (map_size->y_i < map_size->y)
+	{
+		map[map_size->y_i] = (t_coordinate_data **)malloc
+			(sizeof(t_coordinate_data *) * (map_size->x));
+		if (map[map_size->y_i] == NULL)
+			exit (EXIT_FAILURE);
+		while (map_size->x_i < map_size->x)
+		{
+			map[map_size->y_i][map_size->x_i]
+				= make_coordinate_data
+				(char_map[map_size->y_i][map_size->x_i]);
+			map_size->x_i++;
+		}
+		map_size->y_i++;
+		map_size->x_i = 0;
+	}
 	return (map);
 }
 

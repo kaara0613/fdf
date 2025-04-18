@@ -6,7 +6,7 @@
 #    By: kaara <kaara@student.42.jp>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 15:46:31 by kaara             #+#    #+#              #
-#    Updated: 2025/04/15 19:08:03 by kaara            ###   ########.fr        #
+#    Updated: 2025/04/18 16:11:57 by kaara            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRCS = src/main.c\
 OBJS = $(SRCS:.c=.o)
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I include -I$(LIBFT_DIR) -I$(MINILIBX_DIR)
+CFLAGS = -Wall -Wextra -Werror -g -I include -I$(LIBFT_DIR) -I$(MINILIBX_DIR)
 MLXFLAGS = -Lminilibx-linux -lmlx -lXext -lX11
 
 LIBFT_DIR = ./libft
@@ -60,6 +60,6 @@ fclean: clean
 	rm -f $(NAME)
 	$(MAKE) -C $(LIBFT_DIR) fclean
 
-re: fclean all
+make re: fclean all
 
 .PHONY: all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:19 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/18 17:31:10 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/19 13:55:16 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,11 @@ void	free_map(t_coordinate	*map_size,
 
 void	free_char_map(t_coordinate *map_size, char ***char_map)
 {
-	reset_map_index(map_size);
+	map_size->x_i = 0;
+	map_size->y_i = 0;
 	while (map_size->y_i < map_size->y)
 	{
-		while (map_size->x_i < map_size->x)
+		while (char_map[map_size->y_i][map_size->x_i] != NULL)
 		{
 			free(char_map[map_size->y_i][map_size->x_i]);
 			map_size->x_i++;

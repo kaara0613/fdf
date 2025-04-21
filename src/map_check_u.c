@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 03:59:51 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/21 14:32:50 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/21 20:23:51 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,47 +17,44 @@ int	get_x_size(char *read_buffer);
 
 t_coordinate	*get_map_size(int fd, t_coordinate *map_size)
 {
-	int		x;
+	int		flag;
 	char	*read_buffer;
 
-	map_size->x = INT_MAX;
+	flag = 0;
 	while (1)
 	{
 		read_buffer = get_next_line(fd);
-		if (read_buffer == NULL)
+		if (read_buffer != NULL && *read_buffer != '\n')
 		{
-			free(read_buffer);
-			break ;
-		}
-		if (*read_buffer != '\n')
-		{
-			x = get_x_size(read_buffer);
-			if (x <= map_size->x)
-				map_size->x = x;
+			if (flag == 0)
+			{
+				map_size->x = get_x_size(read_buffer);
+				flag = 1;
+			}
+			if (map_size->x != get_x_size(read_buffer))
+				break ;
 			map_size->y++;
 		}
 		free(read_buffer);
+		if (read_buffer == NULL)
+			return (map_size);
 	}
-	return (map_size);
+	free(read_buffer);
+	return (NULL);
 }
 
 int	get_x_size(char *read_buffer)
 {
-	int	i;
-	int	x;
+	int		i;
+	char	**after_split;
 
 	i = 0;
-	x = 0;
-	while (read_buffer[i] != '\0')
+	after_split = ft_split(read_buffer, ' ');
+	while (after_split[i] != NULL)
 	{
-		if (ft_isdigit(read_buffer[i]))
-		{
-			while (ft_isdigit(read_buffer[i]))
-				i++;
-			x++;
-		}
-		if (read_buffer[i] != '\0')
-			i++;
+		free(after_split[i]);
+		i++;
 	}
-	return (x);
+	free(after_split);
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 13:29:44 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/19 12:21:29 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/21 15:55:52 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,12 @@ void	control_mlx_window(t_window_data *window_data)
 
 static int	close_window(t_window_data *window_data)
 {
-	mlx_destroy_image(window_data->mlx_ptr, window_data->img_ptr);
+	mlx_loop_end(window_data->mlx_ptr);
 	mlx_destroy_window(window_data->mlx_ptr, window_data->win_ptr);
+	mlx_destroy_image(window_data->mlx_ptr, window_data->img_ptr);
+	mlx_destroy_display(window_data->mlx_ptr);
+	free(window_data->mlx_ptr);
+	free(window_data);
 	exit(0);
 	return (0);
 }

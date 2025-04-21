@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:31 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/18 15:02:08 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/21 15:44:09 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	map = make_render_map(map_size, window_data, map);
 	window_data = make_mlx_window(window_data);
 	render_map(map_size, map, window_data);
+	free_map(map_size, map);
 	control_mlx_window(window_data);
-	free_map(map_size, window_data, map);
 	return (0);
 }

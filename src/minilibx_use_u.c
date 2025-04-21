@@ -6,11 +6,12 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:47:25 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/19 13:58:12 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/21 15:55:42 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+#include <stdlib.h>
 
 static int	find_highest_z(t_coordinate *map_size, t_coordinate_data ***map);
 
@@ -21,7 +22,12 @@ int	key_hook(int keycode, void *param)
 	window_data = (t_window_data *)param;
 	if (keycode == ESC_KEY)
 	{
+		mlx_loop_end(window_data->mlx_ptr);
 		mlx_destroy_window(window_data->mlx_ptr, window_data->win_ptr);
+		mlx_destroy_image(window_data->mlx_ptr, window_data->img_ptr);
+		mlx_destroy_display(window_data->mlx_ptr);
+		free(window_data->mlx_ptr);
+		free(window_data);
 		exit(0);
 	}
 	return (0);

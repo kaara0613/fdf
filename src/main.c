@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:31 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/21 20:21:50 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/22 15:25:10 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,8 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		return (0);
 	window_data = NULL;
-	window_data = window_data_allocate(window_data);
 	map_size = map_check(argv[1]);
-	if (map_size == NULL)
-	{
-		free(window_data);
-		return (0);
-	}
+	window_data = window_data_allocate(window_data);
 	map = fdf_to_map(map_size, argv[1]);
 	map = make_render_map(map_size, window_data, map);
 	window_data = make_mlx_window(window_data);

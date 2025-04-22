@@ -6,21 +6,24 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 03:59:51 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/21 20:23:51 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/22 16:02:37 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 #include <limits.h>
+#include <stdbool.h>
 
 int	get_x_size(char *read_buffer);
 
-t_coordinate	*get_map_size(int fd, t_coordinate *map_size)
+bool	get_map_size(int fd, t_coordinate *map_size)
 {
 	int		flag;
+	bool	result;
 	char	*read_buffer;
 
 	flag = 0;
+	result = true;
 	while (1)
 	{
 		read_buffer = get_next_line(fd);
@@ -32,15 +35,14 @@ t_coordinate	*get_map_size(int fd, t_coordinate *map_size)
 				flag = 1;
 			}
 			if (map_size->x != get_x_size(read_buffer))
-				break ;
+				result = false;
 			map_size->y++;
 		}
 		free(read_buffer);
 		if (read_buffer == NULL)
-			return (map_size);
+			return (result);
 	}
-	free(read_buffer);
-	return (NULL);
+	return (result);
 }
 
 int	get_x_size(char *read_buffer)

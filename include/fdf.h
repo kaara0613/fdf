@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:09:34 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/21 16:39:43 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/22 16:02:52 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void				free_char_map(t_coordinate *map_size, char ***char_map);
 t_coordinate		*map_check(char *filename);
 
 //map_check_u.c
-t_coordinate		*get_map_size(int fd, t_coordinate *map_size);
+bool	get_map_size(int fd, t_coordinate *map_size);
 
 //make_render_map.c
 t_coordinate_data	***make_render_map(t_coordinate	*map_size,

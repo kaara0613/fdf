@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 03:58:53 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/22 16:04:13 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/22 16:18:16 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,3 @@ static bool	is_valid_extension(char *filename)
 	free(s2);
 	return (true);
 }
-

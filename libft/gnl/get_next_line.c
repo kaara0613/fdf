@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaara <kaara@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 16:57:05 by kaara             #+#    #+#             */
-/*   Updated: 2024/12/16 15:28:53 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/27 17:33:00 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,13 @@ static bool	gnl_realloc(char **buffer, const char *read_buffer)
 	char	*new_buffer;
 
 	buffer_len = 0;
-	if (buffer)
+	if (buffer != NULL && *buffer != NULL)
 		buffer_len = ft_strlen(*buffer);
 	mix_len = buffer_len + ft_strlen(read_buffer);
 	new_buffer = (char *)malloc(mix_len + 1);
 	if (!new_buffer)
 		return (false);
-	if (buffer)
+	if (buffer != NULL && *buffer != NULL)
 	{
 		ft_strlcpy(new_buffer, *buffer, buffer_len + 1);
 		free(*buffer);

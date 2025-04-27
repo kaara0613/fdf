@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/27 15:49:16 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/27 17:52:37 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void				get_colar_and_z(char *char_map, t_coordinate_data *map);
 static void				atoi_to_struct(char	*char_map, t_coordinate_data *map);
-static unsigned int		convert_to_rgb(char *colar);
+static unsigned int		convert_to_rgb(char *color);
 
 char	***make_char_map(t_coordinate	*map_size, int fd)
 {
@@ -25,7 +25,7 @@ char	***make_char_map(t_coordinate	*map_size, int fd)
 	char_map = (char ***)malloc(sizeof(char **) * (map_size->y + 1));
 	if (char_map == NULL)
 		exit(EXIT_FAILURE);
-	while (char_map[map_size->y_i])
+	while (1)
 	{
 		temp = get_next_line(fd);
 		if (temp == NULL)
@@ -94,22 +94,26 @@ static void	get_colar_and_z(char *char_map, t_coordinate_data *map)
 	free(temp);
 }
 
-static unsigned int	convert_to_rgb(char *colar)
+static unsigned int	convert_to_rgb(char *color)
 {
 	unsigned int	result;
 	unsigned int	temp;
 
 	result = 0;
-	if ((*colar == '0' && *(colar + 1) == 'x'))
-		colar += 2;
-	while (*colar)
+	if (color[0] == '0' && color[1] == 'x')
+		color += 2;
+	while (*color)
 	{
-		if (ft_isdigit(*colar))
-			temp = *colar - '0';
-		else if ('A' <= *colar && *colar <= 'F')
-			temp = *colar - 'A' + 10;
+		if (ft_isdigit(*color))
+			temp = *color - '0';
+		else if ('A' <= *color && *color <= 'F')
+			temp = *color - 'A' + 10;
+		else if ('a' <= *color && *color <= 'f')
+			temp = *color - 'a' + 10;
+		else
+			break ;
 		result = (result * 16) + temp;
-		colar++;
+		color++;
 	}
 	return (result);
 }

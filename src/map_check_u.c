@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 03:59:51 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/27 16:07:43 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/27 17:51:34 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ bool	get_map_size(int fd, t_coordinate *map_size)
 	int		flag;
 	bool	result;
 	char	*read_buffer;
-
 
 	result = true;
 	flag = 0;

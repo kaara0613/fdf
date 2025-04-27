@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:10:12 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/21 16:32:33 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/27 15:49:16 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	***make_char_map(t_coordinate	*map_size, int fd)
 	char_map = (char ***)malloc(sizeof(char **) * (map_size->y + 1));
 	if (char_map == NULL)
 		exit(EXIT_FAILURE);
-	while (1)
+	while (char_map[map_size->y_i])
 	{
 		temp = get_next_line(fd);
 		if (temp == NULL)

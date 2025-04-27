@@ -6,7 +6,7 @@
 #    By: kaara <kaara@student.42.jp>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/15 09:00:03 by kaara             #+#    #+#              #
-#    Updated: 2025/04/03 15:14:45 by kaara            ###   ########.fr        #
+#    Updated: 2025/04/26 10:35:51 by kaara            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,6 +67,9 @@ FT_PRINTF_SRC = \
 	ft_printf/handle_format.c\
 	ft_printf/hex_handle_format2.c\
 	ft_printf/libftprintf.c\
+	ft_printf/d_handle_format.c\
+	ft_printf/d_hex_handle_format.c\
+	ft_printf/d_libftprintf.c\
 
 GNL_SRC = \
 	gnl/get_next_line.c\

@@ -6,11 +6,12 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 03:58:53 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/22 16:18:16 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/27 17:05:41 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+#include "ft_printf.h"
 #include <stdbool.h>
 #include <stdio.h>
 
@@ -23,22 +24,26 @@ t_coordinate	*map_check(char *filename)
 
 	if (!is_valid_extension(filename))
 	{
-		perror("file error.");
+		ft_dprintf("file error.\n");
+		exit(EXIT_FAILURE);
+	}
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
+	{
+		ft_dprintf("file error.\n");
 		exit(EXIT_FAILURE);
 	}
 	map_size = (t_coordinate *)malloc(sizeof(t_coordinate));
 	if (map_size == NULL)
 		exit (EXIT_FAILURE);
-	map_size->x = 0;
-	map_size->y = 0;
-	fd = open(filename, O_RDONLY);
 	if (!get_map_size(fd, map_size))
 	{
 		close(fd);
-		perror("file error.");
+		ft_dprintf("file error.\n");
 		exit(EXIT_FAILURE);
 	}
 	close(fd);
+	ft_printf("%d, %d\n", map_size->x, map_size->y);
 	return (map_size);
 }
 

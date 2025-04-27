@@ -6,7 +6,7 @@
 /*   By: kaara <kaara@student.42.jp>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 03:59:51 by kaara             #+#    #+#             */
-/*   Updated: 2025/04/22 16:02:37 by kaara            ###   ########.fr       */
+/*   Updated: 2025/04/27 16:07:43 by kaara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include <limits.h>
 #include <stdbool.h>
 
-int	get_x_size(char *read_buffer);
+static bool	check_x_size(int flag, char *read_buffer, t_coordinate *map_size);
+static int	get_x_size(char *read_buffer);
 
 bool	get_map_size(int fd, t_coordinate *map_size)
 {
@@ -22,19 +23,16 @@ bool	get_map_size(int fd, t_coordinate *map_size)
 	bool	result;
 	char	*read_buffer;
 
-	flag = 0;
+
 	result = true;
+	flag = 0;
+	map_size->y = 0;
 	while (1)
 	{
 		read_buffer = get_next_line(fd);
 		if (read_buffer != NULL && *read_buffer != '\n')
 		{
-			if (flag == 0)
-			{
-				map_size->x = get_x_size(read_buffer);
-				flag = 1;
-			}
-			if (map_size->x != get_x_size(read_buffer))
+			if (!check_x_size(flag, read_buffer, map_size))
 				result = false;
 			map_size->y++;
 		}
@@ -45,18 +43,38 @@ bool	get_map_size(int fd, t_coordinate *map_size)
 	return (result);
 }
 
-int	get_x_size(char *read_buffer)
+static bool	check_x_size(int flag, char *read_buffer, t_coordinate *map_size)
 {
-	int		i;
-	char	**after_split;
+	if (flag == 0)
+	{
+		map_size->x = get_x_size(read_buffer);
+		flag = 1;
+	}
+	if (map_size->x != get_x_size(read_buffer))
+		return (false);
+	return (true);
+}
+
+static int	get_x_size(char *read_buffer)
+{
+	int	i;
+	int	result;
 
 	i = 0;
-	after_split = ft_split(read_buffer, ' ');
-	while (after_split[i] != NULL)
+	result = 0;
+	while (read_buffer[i] != '\n' && read_buffer[i] != '\0')
 	{
-		free(after_split[i]);
+		if (ft_isalpha(read_buffer[i])
+			|| ft_isdigit(read_buffer[i])
+			|| read_buffer[i] == ',')
+		{
+			while (ft_isalpha(read_buffer[i])
+				|| ft_isdigit(read_buffer[i])
+				|| read_buffer[i] == ',')
+				i++;
+			result++;
+		}
 		i++;
 	}
-	free(after_split);
-	return (i);
+	return (result);
 }
